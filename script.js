@@ -7,21 +7,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Menu Mobile Drawer
     const mobileBurger = document.getElementById('mobileBurger');
     const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+    const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function closeMobileMenu() {
+        if (mobileBurger) {
+            mobileBurger.classList.remove('active');
+            mobileBurger.setAttribute('aria-expanded', 'false');
+        }
+        if (mobileDrawer) {
+            mobileDrawer.classList.remove('open');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+        }
+        document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+        if (mobileBurger) {
+            mobileBurger.classList.add('active');
+            mobileBurger.setAttribute('aria-expanded', 'true');
+        }
+        if (mobileDrawer) {
+            mobileDrawer.classList.add('open');
+            mobileDrawer.setAttribute('aria-hidden', 'false');
+        }
+        document.body.style.overflow = 'hidden';
+    }
 
     if (mobileBurger && mobileDrawer) {
         mobileBurger.addEventListener('click', () => {
-            mobileBurger.classList.toggle('active');
-            mobileDrawer.classList.toggle('open');
-            document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+            const isOpen = mobileDrawer.classList.contains('open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
+        if (mobileDrawerClose) {
+            mobileDrawerClose.addEventListener('click', closeMobileMenu);
+        }
+
+        if (mobileDrawerBackdrop) {
+            mobileDrawerBackdrop.addEventListener('click', closeMobileMenu);
+        }
+
         mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileBurger.classList.remove('active');
-                mobileDrawer.classList.remove('open');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Fechar com ESC para acessibilidade
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+                closeMobileMenu();
+            }
         });
     }
 
