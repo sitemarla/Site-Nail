@@ -116,4 +116,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 3. Rolagem Suave com URL Limpa (remove #hero, #cursos, #contato da barra de endereço)
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#' || targetId === '#conteudo-principal') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Mantém a barra de endereço 100% limpa (https://www.marlasakamoto.art.br/)
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, '', window.location.pathname);
+                }
+            }
+        });
+    });
+
+    // Se a página for aberta direto com hashtag, limpa imediatamente
+    if (window.location.hash && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname);
+    }
 });
