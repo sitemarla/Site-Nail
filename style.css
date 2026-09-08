@@ -802,43 +802,91 @@ a {
     box-shadow: 0 6px 18px rgba(225, 48, 108, 0.15);
 }
 
-/* Faixa Horizontal de Métricas */
+/* Faixa Horizontal de Destaques & Autoridade (Redesign de Alto Padrão) */
 .hero-metrics-horizontal {
     display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-    align-items: center;
-    padding-top: 24px;
-    border-top: 1px dashed var(--border);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(242, 225, 230, 0.85);
     position: relative;
     z-index: 2;
 }
 
-.metric-h {
+.metric-card-box {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-pink);
+    border-radius: 16px;
+    padding: 16px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 18px rgba(255, 105, 145, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-card-box:hover {
+    transform: translateY(-3px);
+    background: #FFFFFF;
+    border-color: rgba(220, 39, 67, 0.35);
+    box-shadow: 0 8px 24px rgba(255, 105, 145, 0.12);
+}
+
+.metric-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FFF0F4 0%, #FFE4EC 100%);
+    color: #DC2743;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(220, 39, 67, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.metric-card-box:hover .metric-card-icon {
+    transform: scale(1.08) rotate(4deg);
+    background: linear-gradient(135deg, #f09433, #dc2743);
+    color: #FFFFFF;
+}
+
+.metric-card-info {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
-.metric-h-num {
-    font-family: var(--font-serif);
-    font-size: 1.55rem;
-    font-weight: 600;
+.metric-card-val {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--text-dark);
-    line-height: 1;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
-.metric-h-lbl {
-    font-size: 0.7rem;
+.metric-card-title {
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 4px;
+    color: #935345;
+    margin-top: 2px;
+    white-space: nowrap;
 }
 
-.metric-h-div {
-    width: 1px;
-    height: 28px;
-    background: var(--border);
+.metric-card-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Composição da Foto com Iluminação de Estúdio */
