@@ -127,51 +127,55 @@ a {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(252, 251, 249, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(252, 251, 249, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    padding: 18px 0;
+    padding: 14px 0;
 }
 
 .header-inner {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: 28px;
 }
 
 .brand {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
 .logo {
     font-family: var(--font-serif);
-    font-size: 1.35rem;
-    letter-spacing: 2.5px;
+    font-size: 1.32rem;
+    letter-spacing: 2.2px;
     font-weight: 600;
     color: var(--text-dark);
-    line-height: 1;
+    line-height: 1.1;
 }
 
 .logo-sub {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 2px;
     font-weight: 600;
     color: var(--text-muted);
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
-/* Navegação Desktop Elegante */
+/* Navegação Desktop Centralizada com Distribuição Equilibrada */
 .header-nav {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 24px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -179,20 +183,21 @@ a {
 
 .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--text-body);
     text-decoration: none;
     position: relative;
     padding: 6px 0;
     transition: color 0.25s ease;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
@@ -386,22 +391,27 @@ a {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .btn-header-insta {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     background: #FFFFFF;
-    border: 1px solid rgba(225, 48, 108, 0.28);
-    padding: 8px 16px;
+    border: 1.5px solid rgba(225, 48, 108, 0.25);
+    padding: 8px 15px;
     border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--text-dark);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 8px rgba(225, 48, 108, 0.04);
     transition: var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
 }
 
 .btn-header-insta .insta-svg-icon {
@@ -411,6 +421,7 @@ a {
 
 .btn-header-insta:hover {
     border-color: #E1306C;
+    background: #FFF5F8;
     color: #E1306C;
     transform: translateY(-1px);
     box-shadow: 0 4px 16px rgba(225, 48, 108, 0.18);
@@ -423,31 +434,35 @@ a {
 .btn-header-wa {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    background: #FFFFFF;
-    border: 1px solid var(--border);
+    gap: 8px;
+    background: linear-gradient(135deg, #25D366 0%, #1F9D55 100%);
+    color: #FFFFFF !important;
+    border: none;
     padding: 8px 18px;
     border-radius: 999px;
     font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-body);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 14px rgba(31, 157, 85, 0.28);
     transition: var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-header-wa:hover {
-    border-color: var(--wa-green);
-    color: var(--wa-green);
+    background: linear-gradient(135deg, #2ae06c 0%, #178345 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(31, 157, 85, 0.15);
+    box-shadow: 0 6px 20px rgba(31, 157, 85, 0.45);
+    color: #FFFFFF !important;
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--wa-green);
-    box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.7);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
     animation: statusPulse 2s infinite;
 }
 
@@ -2077,7 +2092,12 @@ a {
 }
 
 /* 8. RESPONSIVIDADE PRECISA (MOBILE FIRST) */
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .header-nav {
         display: none;
     }
@@ -2085,7 +2105,9 @@ a {
     .mobile-burger {
         display: flex;
     }
+}
 
+@media (max-width: 900px) {
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
