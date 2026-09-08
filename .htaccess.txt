@@ -1,0 +1,14 @@
+# Ativa o módulo de reescrita
+RewriteEngine On
+RewriteBase /
+
+# Redireciona o index.html da raiz para o URL limpo
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://marlasakamoto.art.br/ [R=301,L]
+
+# Redireciona o index.html da pasta 'en' para o URL limpo /en/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /en/index\.html\ HTTP/
+RewriteRule ^en/index\.html$ https://marlasakamoto.art.br/en/ [R=301,L]
+
+# Define o arquivo padrão para diretórios que não possuem nome de arquivo no URL
+DirectoryIndex index.html index.php

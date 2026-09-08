@@ -1,0 +1,2099 @@
+/* ==========================================================================
+   MARLA SAKAMOTO — NAIL DESIGN & EDUCADORA
+   Design System: Luxury Beauty Brand + Efeitos de UX/UI & Photoshop Feel
+   ========================================================================== */
+
+:root {
+    /* Paleta Muito Clara, Luminosa e Glossy Beauty */
+    --bg-base: #FCFAF9;
+    --bg-white: #FFFFFF;
+    --bg-subtle: #FFF2F5;
+    --bg-pink-soft: #FFF0F4;
+    --bg-pink-light: #FFE4EC;
+    --bg-pink-card: #FFF5F7;
+    
+    /* Tons de Rosa e Beleza Contemporânea */
+    --pink-bubble: #FF85A1;
+    --pink-vibrant: #FF2E63;
+    --pink-coral: #FF6B8B;
+    --pink-accent: #E63960;
+    --pink-glow: rgba(255, 46, 99, 0.16);
+    
+    /* Contraste & Tipografia */
+    --text-dark: #1A1415;
+    --text-body: #4A4042;
+    --text-muted: #8A7B7E;
+    
+    /* Linhas e Acentos Refinados */
+    --border: #F2E1E6;
+    --border-light: rgba(242, 225, 230, 0.7);
+    --border-accent: #FFB3C6;
+    --border-pink: #FFD4DF;
+    
+    /* Acentos Nobres Rosé / Champanhe */
+    --accent-soft: #FFF0F4;
+    --accent-glow: rgba(255, 105, 145, 0.22);
+    
+    /* Degradês de Beleza Glossy & Instagram */
+    --insta-sunset: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    --pink-glossy: linear-gradient(135deg, #FF758C 0%, #FF2E63 100%);
+    --pink-circle: linear-gradient(135deg, #FFDDE4 0%, #FFB6C8 100%);
+    
+    /* WhatsApp */
+    --wa-green: #1F9D55;
+    --wa-green-hover: #178345;
+    
+    /* Fontes */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: 'Pinyon Script', 'Great Vibes', 'Alex Brush', cursive;
+    
+    /* Dimensões & Sombras Multicamadas */
+    --max-w: 1100px;
+    --shadow-soft: 0 4px 20px rgba(255, 105, 145, 0.05);
+    --shadow-card: 0 10px 30px rgba(255, 105, 145, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+    --shadow-hover: 0 20px 45px rgba(255, 46, 99, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 50px rgba(255, 105, 145, 0.35);
+    
+    --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Letra e Tipografia da Marca */
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+/* 1. Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--bg-base);
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 36px);
+    position: relative;
+    z-index: 2;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Linha de Acento de Luxo no Topo */
+.top-accent-bar {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A394 0%, #E6C2B4 50%, #C88F80 100%);
+}
+
+/* 2. Header com Efeito Vidro Fosco (Glassmorphism) */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(252, 251, 249, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-header-insta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid rgba(225, 48, 108, 0.28);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.btn-header-insta .insta-svg-icon {
+    color: #E1306C;
+    transition: var(--transition);
+}
+
+.btn-header-insta:hover {
+    border-color: #E1306C;
+    color: #E1306C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(225, 48, 108, 0.18);
+}
+
+.btn-header-insta:hover .insta-svg-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.btn-header-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-body);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.btn-header-wa:hover {
+    border-color: var(--wa-green);
+    color: var(--wa-green);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(31, 157, 85, 0.15);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--wa-green);
+    box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.7);
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0% { box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.6); }
+    70% { box-shadow: 0 0 0 6px rgba(31, 157, 85, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(31, 157, 85, 0); }
+}
+
+/* 3. HERO — Composição Fotográfica & Photoshop Feel */
+.hero {
+    position: relative;
+    padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 8vw, 110px) 0;
+    overflow: hidden;
+}
+
+/* Marca d'água gigante translúcida no fundo */
+.watermark-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: clamp(8rem, 20vw, 18rem);
+    font-weight: 600;
+    color: rgba(232, 225, 215, 0.25);
+    letter-spacing: 12px;
+    pointer-events: none;
+    z-index: 1;
+    user-select: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(40px, 6vw, 70px);
+    align-items: center;
+}
+
+/* ==========================================================================
+   NOVA COMPOSIÇÃO: HERO HORIZONTAL COM CORES DO INSTAGRAM
+   ========================================================================== */
+.hero-horizontal {
+    padding: clamp(40px, 5vw, 70px) 0;
+}
+
+.hero-horizontal-card {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid rgba(212, 163, 148, 0.45);
+    border-radius: 24px;
+    padding: clamp(26px, 4vw, 42px);
+    box-shadow: 0 20px 60px rgba(30, 24, 21, 0.07), 0 4px 16px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+/* Efeito de Luz / Ambient Glow com Tons do Instagram */
+.insta-ambient-glow {
+    position: absolute;
+    top: -90px;
+    left: -70px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(240, 148, 51, 0.14) 0%, rgba(220, 39, 67, 0.11) 35%, rgba(188, 24, 136, 0.05) 60%, transparent 75%);
+    filter: blur(45px);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Faixa Superior com Degradê Oficial do Instagram */
+.insta-top-accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5px;
+    background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Top bar dentro do card */
+.hero-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 2;
+}
+
+.tag-pill-insta {
+    background: rgba(253, 242, 239, 0.95);
+    border: 1px solid rgba(220, 39, 67, 0.25);
+    color: #B83A4B;
+    margin-bottom: 0;
+}
+
+.hero-insta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid rgba(220, 39, 67, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.hero-insta-chip .insta-svg-icon {
+    color: #E1306C;
+    transition: var(--transition);
+}
+
+.hero-insta-chip:hover {
+    border-color: #E1306C;
+    color: #E1306C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(225, 48, 108, 0.22);
+}
+
+.hero-insta-chip:hover .insta-svg-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.insta-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #E1306C;
+    box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
+    animation: instaPulse 2s infinite;
+}
+
+@keyframes instaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(225, 48, 108, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0); }
+}
+
+/* Grid Horizontal do Corpo do Hero */
+.hero-horizontal-body {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: clamp(28px, 4vw, 52px);
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Enquadramento Fotográfico Horizontal com Moldura Instagram */
+.hero-photo-horizontal {
+    position: relative;
+}
+
+.photo-story-ring {
+    padding: 3px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 12px 36px rgba(220, 39, 67, 0.22);
+}
+
+.photo-frame-horizontal {
+    border-radius: 15px;
+    overflow: hidden;
+    background: #FFFFFF;
+    aspect-ratio: 16 / 11;
+    position: relative;
+}
+
+.hero-img-horizontal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: contrast(1.02) brightness(1.01);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-frame-horizontal:hover .hero-img-horizontal {
+    transform: scale(1.04);
+}
+
+.photo-vignette-horizontal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(to top, rgba(18, 14, 12, 0.45) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.photo-overlay-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.glass-badge-horizontal {
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.badge-icon-insta {
+    background: linear-gradient(135deg, #f09433, #dc2743);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.glass-badge-horizontal .badge-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge-brand-title,
+.glass-badge-horizontal .badge-text strong,
+.story-photo-badge strong {
+    font-family: var(--font-serif);
+    font-size: 0.96rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.glass-badge-horizontal .badge-text span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+    display: block;
+    line-height: 1.2;
+}
+
+/* Tipografia Horizontal */
+.hero-content-horizontal {
+    position: relative;
+}
+
+.hero-title-horizontal {
+    font-family: var(--font-serif);
+    font-size: clamp(1.85rem, 3.3vw, 2.95rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.hero-tagline-horizontal {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #935345;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero-desc-horizontal {
+    font-size: 0.98rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 26px;
+    max-width: 560px;
+}
+
+.hero-cta-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn-insta-gradient {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 8px 24px rgba(220, 39, 67, 0.35);
+}
+
+.btn-insta-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(220, 39, 67, 0.5);
+    color: #FFFFFF;
+}
+
+.btn-secondary-horizontal {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(220, 39, 67, 0.28);
+    color: var(--text-dark);
+}
+
+.btn-secondary-horizontal:hover {
+    border-color: #E1306C;
+    color: #E1306C;
+    background: #FFF9FA;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(225, 48, 108, 0.15);
+}
+
+/* Faixa Horizontal de Métricas */
+.hero-metrics-horizontal {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px dashed var(--border);
+    position: relative;
+    z-index: 2;
+}
+
+.metric-h {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-h-num {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.metric-h-lbl {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.metric-h-div {
+    width: 1px;
+    height: 28px;
+    background: var(--border);
+}
+
+/* Composição da Foto com Iluminação de Estúdio */
+.hero-photo-composition {
+    position: relative;
+}
+
+.ambient-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at 60% 40%, rgba(226, 178, 166, 0.45) 0%, rgba(252, 251, 249, 0) 70%);
+    filter: blur(35px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.photo-frame {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 50px rgba(184, 114, 101, 0.15), 0 4px 15px rgba(0, 0, 0, 0.04);
+    z-index: 2;
+    aspect-ratio: 4 / 5;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.02) brightness(1.01);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-frame:hover .hero-img {
+    transform: scale(1.03);
+}
+
+/* Vinheta fotográfica suave na base da imagem */
+.photo-vignette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(to top, rgba(20, 18, 17, 0.35) 0%, rgba(20, 18, 17, 0) 100%);
+    pointer-events: none;
+}
+
+/* Badge Flutuante em Glassmorphism */
+.glass-badge {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.badge-icon {
+    color: var(--border-accent);
+    font-size: 1.1rem;
+}
+
+.badge-text strong {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.badge-text span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* Conteúdo Textual do Hero */
+.hero-text-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(212, 163, 148, 0.4);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #935345;
+    margin-bottom: 20px;
+}
+
+.tag-sparkle {
+    font-size: 0.8rem;
+    color: var(--border-accent);
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.hero-signature {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.signature-highlight {
+    font-style: normal;
+    font-weight: 600;
+    color: #935345;
+    position: relative;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 34px;
+    max-width: 520px;
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 36px;
+}
+
+/* Botões com Efeito Shimmer (Brilho Deslizante de UX) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--text-dark);
+    color: #FFFFFF;
+    border: 1px solid var(--text-dark);
+    box-shadow: 0 4px 18px rgba(20, 18, 17, 0.2);
+}
+
+.btn-primary:hover {
+    background: #332F2C;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(20, 18, 17, 0.3);
+}
+
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.75s ease;
+}
+
+.btn-shimmer:hover::after {
+    transform: translateX(100%);
+}
+
+.btn-secondary {
+    background: #FFFFFF;
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-subtle);
+    border-color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+.arrow-icon {
+    transition: transform 0.25s ease;
+}
+
+.btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Indicadores de Autoridade */
+.hero-metrics {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-num {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.1;
+}
+
+.metric-lbl {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.metric-div {
+    width: 1px;
+    height: 28px;
+    background: var(--border);
+}
+
+/* ==========================================================================
+   4. SEÇÃO HISTÓRIA — Composição Editorial com Gloss de Beleza
+   ========================================================================== */
+.story-section {
+    padding: clamp(60px, 7vw, 90px) 0;
+    background: linear-gradient(180deg, var(--bg-base) 0%, #FFF5F7 50%, var(--bg-base) 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.story-card-beauty {
+    position: relative;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF8FA 100%);
+    border: 1.5px solid var(--border-pink);
+    border-radius: 28px;
+    padding: clamp(28px, 4.5vw, 48px);
+    box-shadow: 0 16px 45px rgba(255, 105, 145, 0.08);
+    overflow: hidden;
+}
+
+.story-beauty-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(255, 133, 161, 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.story-beauty-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(28px, 4vw, 48px);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.story-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-dark);
+    margin: 14px 0 20px 0;
+}
+
+.lead-text {
+    font-size: 1.12rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.story-subtext {
+    font-size: 0.96rem;
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.story-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.story-pill-pink {
+    background: rgba(255, 229, 237, 0.8);
+    border: 1px solid rgba(255, 133, 161, 0.45);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #DC2743;
+}
+
+.story-photo-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(255, 105, 145, 0.16);
+    border: 3px solid #FFFFFF;
+}
+
+.story-photo-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3.4;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-photo-wrapper:hover .story-photo-img {
+    transform: scale(1.05);
+}
+
+.story-photo-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.story-photo-badge strong {
+    display: block;
+    font-size: 0.84rem;
+    color: var(--text-dark);
+}
+
+.story-photo-badge span {
+    font-size: 0.72rem;
+    color: #DC2743;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. SEÇÃO CURSOS — CARDS INSPIRADOS NO DESIGN DE BELEZA (ROSA GLOSSY + CARD FLUTUANTE)
+   ========================================================================== */
+.courses-section {
+    padding: clamp(70px, 8vw, 110px) 0;
+    background: linear-gradient(180deg, var(--bg-base) 0%, #FFF5F7 50%, var(--bg-base) 100%);
+}
+
+.section-head {
+    max-width: 680px;
+    margin: 0 auto 50px auto;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    margin: 10px 0;
+}
+
+.section-subtitle {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+}
+
+.beauty-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: clamp(22px, 3vw, 30px);
+}
+
+/* Card Estilo Referência: Moldura Rosa com Foto e Card Flutuante Branco */
+.beauty-card {
+    position: relative;
+    background: #FFF1F5;
+    border: 1.5px solid #FFD4DF;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 14px 40px rgba(255, 105, 145, 0.10);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.beauty-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(255, 46, 99, 0.20);
+    border-color: #FF85A1;
+}
+
+.beauty-card-featured {
+    border-color: #FF4D79;
+    box-shadow: 0 18px 45px rgba(255, 77, 121, 0.16);
+    background: #FFF0F4;
+}
+
+.beauty-card-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 13;
+    overflow: hidden;
+}
+
+.beauty-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.beauty-card:hover .beauty-card-img {
+    transform: scale(1.08);
+}
+
+.beauty-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(255, 241, 245, 0.9) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.beauty-badge-pill {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #DC2743;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.12);
+    z-index: 2;
+}
+
+.beauty-pill-featured {
+    background: linear-gradient(135deg, #FF6584 0%, #DC2743 100%);
+    color: #FFFFFF;
+}
+
+/* Card Branco Flutuante Sobreposto na Base */
+.beauty-card-content {
+    background: #FFFFFF;
+    border-radius: 22px;
+    margin: -32px 14px 14px 14px;
+    padding: 24px 20px 18px 20px;
+    box-shadow: 0 8px 24px rgba(255, 105, 145, 0.08);
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.beauty-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.42rem;
+    font-weight: 600;
+    color: #1A1415;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.beauty-card-desc {
+    font-size: 0.88rem;
+    color: #5C5255;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.beauty-card-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+/* Botão Circular Rosa com Seta (Exatamente como na Referência) */
+.btn-beauty-circle-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #FFE4EC;
+    color: #DC2743;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 14px rgba(220, 39, 67, 0.15);
+}
+
+.btn-beauty-circle-arrow:hover,
+.beauty-card:hover .btn-beauty-circle-arrow {
+    background: linear-gradient(135deg, #FF6584 0%, #DC2743 100%);
+    color: #FFFFFF;
+    transform: scale(1.12);
+    box-shadow: 0 8px 22px rgba(220, 39, 67, 0.35);
+}
+
+.btn-circle-featured {
+    background: #FFD4E0;
+    color: #B81D3E;
+}
+
+/* Indicador de 3 Pontos como na Referência */
+.beauty-dots-indicator {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.beauty-dots-indicator .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FFD4DF;
+    transition: all 0.3s ease;
+}
+
+.beauty-dots-indicator .dot.active,
+.beauty-card:hover .beauty-dots-indicator .dot.active {
+    background: #FF2E63;
+    width: 8px;
+    height: 8px;
+}
+
+/* ==========================================================================
+   5. SEÇÃO INSTAGRAM SPOTLIGHT — Comunidade, Bastidores & Portfólio
+   ========================================================================== */
+.insta-spotlight-section {
+    padding: clamp(50px, 7vw, 90px) 0;
+    background: linear-gradient(180deg, var(--bg-base) 0%, #FAF5EE 50%, var(--bg-base) 100%);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 90px;
+}
+
+.insta-spotlight-card {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid rgba(212, 163, 148, 0.4);
+    border-radius: 20px;
+    padding: clamp(28px, 4.5vw, 44px);
+    box-shadow: 0 16px 48px rgba(30, 24, 21, 0.06);
+    overflow: hidden;
+}
+
+.insta-glow-radial {
+    position: absolute;
+    top: -60px;
+    right: -40px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(225, 48, 108, 0.08) 0%, rgba(240, 148, 51, 0.04) 50%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.insta-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.insta-profile-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.insta-avatar-halo {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 6px 18px rgba(225, 48, 108, 0.28);
+}
+
+.insta-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    display: block;
+}
+
+.insta-profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.insta-username {
+    font-family: var(--font-sans);
+    font-size: 1.28rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+}
+
+.insta-verified-star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #f09433, #dc2743);
+    color: #FFFFFF;
+    font-size: 0.62rem;
+    border-radius: 50%;
+}
+
+.insta-subline {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #935345;
+    margin-top: 2px;
+}
+
+.insta-microbio {
+    font-size: 0.86rem;
+    color: var(--text-body);
+    margin-top: 4px;
+    max-width: 520px;
+}
+
+.btn-insta-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #FFFFFF;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.35);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-insta-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(220, 39, 67, 0.5);
+    color: #FFFFFF;
+}
+
+.btn-insta-main .insta-svg-icon {
+    flex-shrink: 0;
+}
+
+/* Galeria de Fotos Quadradas do Instagram */
+.insta-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.insta-grid-item {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.insta-thumb-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bg-subtle);
+}
+
+.insta-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-grid-item:hover .insta-thumb-img {
+    transform: scale(1.08);
+}
+
+.insta-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20, 16, 14, 0.82) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.insta-grid-item:hover .insta-hover-overlay {
+    opacity: 1;
+}
+
+.insta-post-badge {
+    color: #FFFFFF;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.insta-hover-cta {
+    color: #F8D3CB;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Rodapé do Card Instagram */
+.insta-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+}
+
+.insta-stats-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.insta-pill {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-body);
+}
+
+.insta-direct-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #935345;
+    transition: var(--transition);
+}
+
+.insta-direct-link:hover {
+    color: #DC2743;
+    transform: translateX(3px);
+}
+
+/* 6. SEÇÃO CONTATO — Luxury Conversion Box */
+.contact-section {
+    padding: clamp(70px, 8vw, 110px) 0;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border);
+}
+
+.contact-box-luxury {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F8 100%);
+    border: 1.5px solid var(--border-pink);
+    border-radius: 28px;
+    padding: clamp(40px, 6vw, 65px) clamp(24px, 5vw, 55px);
+    box-shadow: 0 16px 45px rgba(255, 105, 145, 0.10);
+    overflow: hidden;
+}
+
+.contact-box-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 105, 145, 0.22) 0%, transparent 70%);
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+.contact-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.contact-lead {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 34px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-action-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.btn-whatsapp-luxury {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 440px;
+    padding: 18px 28px;
+    background: var(--wa-green);
+    color: #FFFFFF;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(31, 157, 85, 0.32);
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-whatsapp-luxury:hover {
+    background: var(--wa-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(31, 157, 85, 0.45);
+}
+
+.wa-status-ring {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-instagram-prominent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 440px;
+    padding: 16px 24px;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(225, 48, 108, 0.35);
+    color: var(--text-dark);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(255, 105, 145, 0.08);
+    transition: var(--transition);
+}
+
+.btn-instagram-prominent .insta-svg-icon {
+    color: #E1306C;
+    transition: var(--transition);
+}
+
+.btn-instagram-prominent:hover {
+    border-color: #E1306C;
+    background: #FFF5F7;
+    color: #E1306C;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(225, 48, 108, 0.18);
+}
+
+.btn-instagram-prominent:hover .insta-svg-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.contact-location-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+/* 7. FOOTER */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    background: var(--bg-base);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-brand {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    display: block;
+}
+
+.footer-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.footer-developer {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
+.link-edgeweb {
+    color: #E1306C;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.link-edgeweb:hover {
+    color: #bc1888;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE & WCAG 2.1 AA
+   ========================================================================== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #DC2743;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 99999;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+    top: 16px;
+    outline: 3px solid #FFFFFF;
+    outline-offset: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid #DC2743;
+    outline-offset: 3px;
+}
+
+/* ==========================================================================
+   5.5 SEÇÃO FAQ ACESSÍVEL (Dúvidas Frequentes)
+   ========================================================================== */
+.faq-section {
+    padding: clamp(60px, 7vw, 100px) 0;
+    background: var(--bg-base);
+    border-top: 1px solid var(--border);
+    position: relative;
+    scroll-margin-top: 90px;
+}
+
+.faq-accordion-wrapper {
+    max-width: 760px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-pink);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(255, 105, 145, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(220, 39, 67, 0.4);
+    box-shadow: 0 8px 24px rgba(255, 105, 145, 0.12);
+}
+
+.faq-item[open] {
+    border-color: rgba(220, 39, 67, 0.5);
+    box-shadow: 0 10px 28px rgba(220, 39, 67, 0.12);
+}
+
+.faq-question {
+    padding: 22px 26px;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFF0F3;
+    color: #DC2743;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.faq-item[open] .faq-toggle-icon {
+    transform: rotate(45deg);
+    background: #DC2743;
+    color: #FFFFFF;
+}
+
+.faq-item[open] .faq-question {
+    color: #DC2743;
+    border-bottom: 1px solid #FFF0F3;
+}
+
+.faq-answer {
+    padding: 20px 26px 24px;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    animation: faqFadeIn 0.35s ease;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+@keyframes faqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   BOTÃO FLUTUANTE WHATSAPP (CONVERSÃO DIRETA)
+   ========================================================================== */
+.floating-cta-wrapper {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+}
+
+.floating-wa-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #FFFFFF;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-wa-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+    color: #FFFFFF;
+}
+
+.floating-wa-pulse {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.4);
+    z-index: -1;
+    animation: waPulseRing 2.2s infinite;
+}
+
+@keyframes waPulseRing {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    70% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+.floating-wa-badge {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    background: #DC2743;
+    color: #FFFFFF;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.floating-wa-svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* 8. RESPONSIVIDADE PRECISA (MOBILE FIRST) */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-photo-composition {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .glass-badge {
+        bottom: -10px;
+        right: 10px;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .hero-cta-group .btn {
+        width: 100%;
+    }
+
+    .hero-horizontal-body {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-metrics-horizontal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .metric-h-div {
+        display: none;
+    }
+
+    .hero-cta-horizontal {
+        flex-direction: column;
+    }
+
+    .hero-cta-horizontal .btn {
+        width: 100%;
+    }
+
+    .insta-visual-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .insta-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .insta-action-wrapper {
+        width: 100%;
+    }
+
+    .btn-insta-main {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .story-beauty-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .beauty-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+    }
+
+    .btn-header-insta, .btn-header-wa {
+        flex: 1;
+        justify-content: center;
+        padding: 7px 10px;
+        font-size: 0.74rem;
+        white-space: nowrap;
+    }
+
+    .hero-horizontal-card {
+        padding: 24px 16px 20px 16px;
+        border-radius: 20px;
+    }
+
+    .hero-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero-title-horizontal {
+        font-size: 2rem;
+    }
+
+    .glass-badge-horizontal {
+        right: 0;
+        bottom: -10px;
+        padding: 8px 14px;
+        gap: 8px;
+    }
+
+    .badge-brand-title {
+        font-size: 0.86rem;
+    }
+
+    .hero-metrics-horizontal {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .photo-frame-horizontal {
+        aspect-ratio: 4 / 3;
+    }
+
+    .story-card-beauty {
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .story-title {
+        font-size: 1.85rem;
+    }
+
+    .beauty-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .contact-box-luxury {
+        padding: 32px 18px;
+        border-radius: 22px;
+    }
+
+    .btn-whatsapp-luxury, .btn-instagram-prominent {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 16px;
+        font-size: 0.78rem;
+    }
+
+    .insta-visual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-left {
+        text-align: center;
+    }
+
+    .footer-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .floating-cta-wrapper {
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .floating-wa-btn {
+        width: 52px;
+        height: 52px;
+    }
+
+    .floating-wa-svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 0.98rem;
+    }
+
+    .faq-answer {
+        padding: 16px 20px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 1.8px;
+    }
+
+    .hero-title-horizontal {
+        font-size: 1.75rem;
+    }
+
+    .hero-tagline-horizontal {
+        font-size: 0.84rem;
+    }
+
+    .btn {
+        padding: 13px 20px;
+        font-size: 0.78rem;
+    }
+
+    .btn-header-insta span, .btn-header-wa span:last-child {
+        font-size: 0.7rem;
+    }
+
+    .glass-badge-horizontal {
+        padding: 6px 12px;
+    }
+
+    .badge-brand-title {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+}

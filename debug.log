@@ -1,0 +1,12 @@
+2025-09-13 12:40:43 - Requisição POST recebida.
+2025-09-13 12:40:43 - Dados coletados: Name=Edvaldo, Email=edesigncs3@gmail.com, Subject=teste
+2025-09-13 12:40:43 - Tentando enviar e-mail para: contato@marlasakamoto.art.br com assunto: Novo Contato do Site Marla Sakamoto: teste. Remetente: edesigncs3@gmail.com
+2025-09-13 12:40:43 - Falha ao enviar e-mail (função mail() retornou FALSE).
+2025-09-13 12:50:19 - Requisição POST recebida.
+2025-09-13 12:50:19 - Dados coletados: Name=Edvaldo, Email=marla.sakamoto@icloud.com, Subject=teste
+2025-09-13 12:50:19 - Tentando enviar e-mail para: contato@marlasakamoto.art.br com assunto: Novo Contato do Site Marla Sakamoto: teste. Remetente: marla.sakamoto@icloud.com
+2025-09-13 12:50:19 - Falha ao enviar e-mail (função mail() retornou FALSE).
+2025-09-13 15:47:44 - Requisição POST recebida.
+2025-09-13 15:47:44 - Dados coletados: Name=EDVALDO Leonidas BESERRA, Email=edesigncs3@gmail.com, Subject=teste
+2025-09-13 15:47:44 - Tentando enviar e-mail para: contato@marlasakamoto.art.br com assunto: Novo Contato do Site Marla Sakamoto: teste. Remetente: edesigncs3@gmail.com
+2025-09-13 15:47:44 - Falha ao enviar e-mail (função mail() retornou FALSE).

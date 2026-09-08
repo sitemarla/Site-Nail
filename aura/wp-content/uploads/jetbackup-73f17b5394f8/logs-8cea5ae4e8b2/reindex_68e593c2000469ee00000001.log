@@ -1,0 +1,19 @@
+[2025-10-07 22:27:24] [186.223.117.62] Starting reindex for JetBackup Linux
+[2025-10-07 22:27:24] [186.223.117.62] Execution time: 0
+[2025-10-07 22:27:24] [186.223.117.62] TTL time: 0
+[2025-10-07 22:27:24] [186.223.117.62] Hiding all destination snapshots
+[2025-10-07 22:27:24] [186.223.117.62] Execution time: 0
+[2025-10-07 22:27:24] [186.223.117.62] TTL time: 0
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] 	[_handleJBSnapshot] Snapshot found on local database, skipping import
+[2025-10-07 22:27:24] [186.223.117.62] Execution time: 0
+[2025-10-07 22:27:24] [186.223.117.62] TTL time: 0
+[2025-10-07 22:27:24] [186.223.117.62] Removing all unneeded snapshots
+[2025-10-07 22:27:24] [186.223.117.62] Completed!
+[2025-10-07 22:27:24] [186.223.117.62] Total time: 0
