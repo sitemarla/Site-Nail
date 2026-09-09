@@ -1440,36 +1440,39 @@ a {
 }
 
 /* ==========================================================================
-   5. SEÇÃO INSTAGRAM SPOTLIGHT — Comunidade, Bastidores & Portfólio
+   5. SEÇÃO INSTAGRAM SPOTLIGHT — Comunidade & Portfólio Warm Modern Luxury
    ========================================================================== */
 .insta-spotlight-section {
-    padding: clamp(50px, 7vw, 90px) 0;
-    background: linear-gradient(180deg, var(--bg-base) 0%, #FAF5EE 50%, var(--bg-base) 100%);
+    padding: clamp(70px, 8vw, 105px) 0;
+    background: var(--bg-canvas);
     position: relative;
     overflow: hidden;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
     scroll-margin-top: 90px;
 }
 
 .insta-spotlight-card {
     position: relative;
     background: #FFFFFF;
-    border: 1px solid rgba(212, 163, 148, 0.4);
-    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     padding: clamp(28px, 4.5vw, 44px);
-    box-shadow: 0 16px 48px rgba(30, 24, 21, 0.06);
+    box-shadow: var(--shadow-ambient);
     overflow: hidden;
+    z-index: 2;
 }
 
 .insta-glow-radial {
     position: absolute;
-    top: -60px;
-    right: -40px;
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, rgba(225, 48, 108, 0.08) 0%, rgba(240, 148, 51, 0.04) 50%, transparent 70%);
+    top: -80px;
+    right: -60px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(235, 222, 211, 0.45) 0%, rgba(247, 243, 238, 0) 70%);
     pointer-events: none;
     border-radius: 50%;
+    filter: blur(50px);
 }
 
 .insta-header-row {
@@ -1480,7 +1483,7 @@ a {
     gap: 24px;
     margin-bottom: 32px;
     padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .insta-profile-meta {
@@ -1491,13 +1494,13 @@ a {
 
 .insta-avatar-halo {
     position: relative;
-    width: 72px;
-    height: 72px;
+    width: 76px;
+    height: 76px;
     flex-shrink: 0;
     border-radius: 50%;
     padding: 3px;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    box-shadow: 0 6px 18px rgba(225, 48, 108, 0.28);
+    background: linear-gradient(135deg, #D4AF37 0%, #C5A880 50%, #8C6D48 100%);
+    box-shadow: 0 6px 18px rgba(140, 109, 72, 0.22);
 }
 
 .insta-avatar-img {
@@ -1506,7 +1509,7 @@ a {
     object-fit: cover;
     object-position: center 25%;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;
+    border: 2.5px solid #FFFFFF;
     display: block;
 }
 
@@ -1523,10 +1526,10 @@ a {
 
 .insta-username {
     font-family: var(--font-sans);
-    font-size: 1.28rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    letter-spacing: -0.3px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 .insta-verified-star {
@@ -1535,68 +1538,88 @@ a {
     justify-content: center;
     width: 18px;
     height: 18px;
-    background: linear-gradient(135deg, #f09433, #dc2743);
+    background: var(--accent-terracotta);
     color: #FFFFFF;
-    font-size: 0.62rem;
+    font-size: 0.65rem;
+    font-weight: 700;
     border-radius: 50%;
 }
 
 .insta-subline {
     font-size: 0.84rem;
     font-weight: 600;
-    color: #935345;
-    margin-top: 2px;
+    color: var(--accent-bronze);
+    margin-top: 3px;
 }
 
 .insta-microbio {
-    font-size: 0.86rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
     color: var(--text-body);
     margin-top: 4px;
     max-width: 520px;
+    line-height: 1.5;
 }
 
 .btn-insta-main {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #FFFFFF;
-    padding: 13px 26px;
+    background: var(--bg-nude-warm);
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(179, 139, 109, 0.4);
+    padding: 12px 24px;
     border-radius: 999px;
-    font-size: 0.82rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.35);
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(28, 23, 23, 0.05);
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-insta-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(220, 39, 67, 0.5);
-    color: #FFFFFF;
 }
 
 .btn-insta-main .insta-svg-icon {
-    flex-shrink: 0;
+    color: var(--accent-bronze);
+    transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Galeria de Fotos Quadradas do Instagram */
+.btn-insta-main:hover {
+    background: #1C1615;
+    border-color: #1C1615;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(28, 20, 18, 0.2);
+}
+
+.btn-insta-main:hover .insta-svg-icon {
+    color: #C5A880;
+    transform: scale(1.15) rotate(-5deg);
+}
+
+/* Galeria de Fotos Estilo Pinterest / Editorial */
 .insta-visual-grid {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 14px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 26px;
 }
 
 .insta-grid-item {
     display: block;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 16px rgba(28, 23, 23, 0.04);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.insta-grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px -4px rgba(28, 23, 23, 0.12);
+    border-color: rgba(179, 139, 109, 0.6);
 }
 
 .insta-thumb-box {
@@ -1604,14 +1627,14 @@ a {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: var(--bg-subtle);
+    background: var(--bg-nude-warm);
 }
 
 .insta-thumb-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .insta-grid-item:hover .insta-thumb-img {
@@ -1621,11 +1644,11 @@ a {
 .insta-hover-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(20, 16, 14, 0.82) 100%);
+    background: linear-gradient(180deg, rgba(28, 22, 21, 0) 30%, rgba(28, 22, 21, 0.85) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 16px;
+    padding: 14px;
     opacity: 0;
     transition: opacity 0.35s ease;
 }
@@ -1635,18 +1658,24 @@ a {
 }
 
 .insta-post-badge {
-    color: #FFFFFF;
-    font-size: 0.74rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    width: fit-content;
     text-transform: uppercase;
 }
 
 .insta-hover-cta {
-    color: #F8D3CB;
+    color: #E8D8C8;
     font-size: 0.7rem;
-    font-weight: 500;
-    margin-top: 4px;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
 /* Rodapé do Card Instagram */
@@ -1655,9 +1684,9 @@ a {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 14px;
-    padding-top: 18px;
-    border-top: 1px dashed var(--border);
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-subtle);
 }
 
 .insta-stats-pills {
@@ -1667,24 +1696,32 @@ a {
 }
 
 .insta-pill {
-    background: var(--bg-subtle);
-    border: 1px solid var(--border);
-    padding: 5px 12px;
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
     border-radius: 999px;
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--text-body);
+    color: var(--accent-terracotta);
+    letter-spacing: 0.02em;
 }
 
 .insta-direct-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #935345;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--text-body);
+    text-decoration: none;
     transition: var(--transition);
 }
 
+.insta-direct-link strong {
+    color: var(--accent-terracotta);
+    font-weight: 700;
+}
+
 .insta-direct-link:hover {
-    color: #DC2743;
+    color: var(--accent-bronze);
     transform: translateX(3px);
 }
 
@@ -2357,6 +2394,12 @@ a {
     .insta-visual-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+
+    .insta-footer-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
     }
 
     .footer-inner {
