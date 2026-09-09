@@ -1189,327 +1189,423 @@ a {
 }
 
 /* ==========================================================================
-   4. SEÇÃO HISTÓRIA — Composição Editorial com Gloss de Beleza
+   4. SEÇÃO HISTÓRIA — COMPOSIÇÃO EDITORIAL DE ALTO PADRÃO
    ========================================================================== */
 .story-section {
-    padding: clamp(60px, 7vw, 90px) 0;
-    background: linear-gradient(180deg, var(--bg-base) 0%, #FFF5F7 50%, var(--bg-base) 100%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    padding: clamp(64px, 8vw, 100px) 0;
+    background: #FAF8F6;
+    border-top: 1px solid rgba(225, 214, 209, 0.6);
+    border-bottom: 1px solid rgba(225, 214, 209, 0.6);
+    position: relative;
 }
 
-.story-card-beauty {
+.tag-pill-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #8C6D48;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(140, 109, 72, 0.05);
+    margin-bottom: 16px;
+}
+
+.story-card-luxury {
     position: relative;
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF8FA 100%);
-    border: 1.5px solid var(--border-pink);
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 215, 210, 0.8);
     border-radius: 28px;
-    padding: clamp(28px, 4.5vw, 48px);
-    box-shadow: 0 16px 45px rgba(255, 105, 145, 0.08);
+    padding: clamp(28px, 4.5vw, 52px);
+    box-shadow: 0 12px 36px -4px rgba(28, 20, 18, 0.04);
     overflow: hidden;
 }
 
-.story-beauty-glow {
+.story-luxury-ambient {
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 360px;
-    height: 360px;
-    background: radial-gradient(circle, rgba(255, 133, 161, 0.2) 0%, transparent 70%);
-    filter: blur(40px);
+    top: -80px;
+    right: -80px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(230, 200, 180, 0.18) 0%, transparent 70%);
+    filter: blur(50px);
     pointer-events: none;
 }
 
-.story-beauty-grid {
+.story-luxury-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(28px, 4vw, 48px);
+    gap: clamp(32px, 4.5vw, 56px);
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
-.story-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.1rem, 3.8vw, 3rem);
-    font-weight: 400;
-    line-height: 1.15;
-    color: var(--text-dark);
-    margin: 14px 0 20px 0;
+.story-title-modern {
+    font-family: var(--font-sans);
+    font-size: clamp(1.8rem, 3.2vw, 2.45rem);
+    font-weight: 700;
+    line-height: 1.22;
+    color: #1A1311;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
 }
 
-.lead-text {
-    font-size: 1.12rem;
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--text-dark);
+.story-lead-modern {
+    font-family: var(--font-sans);
+    font-size: 1.04rem;
+    font-weight: 500;
+    color: #382E2B;
     line-height: 1.65;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
-.story-subtext {
-    font-size: 0.96rem;
-    color: var(--text-body);
-    line-height: 1.75;
-    margin-bottom: 24px;
+.story-body-modern {
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    color: #6E5C56;
+    line-height: 1.7;
+    margin-bottom: 28px;
 }
 
-.story-pills-row {
+/* Grid de Diferenciais de Mesa */
+.story-features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.story-feature-item {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 16px;
+    background: #FAF8F6;
+    border: 1px solid rgba(225, 214, 209, 0.6);
+    border-radius: 14px;
+    transition: all 0.25s ease;
 }
 
-.story-pill-pink {
-    background: rgba(255, 229, 237, 0.8);
-    border: 1px solid rgba(255, 133, 161, 0.45);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 600;
-    color: #DC2743;
+.story-feature-item:hover {
+    background: #FFFFFF;
+    border-color: rgba(197, 168, 128, 0.5);
+    box-shadow: 0 4px 14px rgba(28, 20, 18, 0.04);
+    transform: translateX(3px);
 }
 
-.story-photo-wrapper {
+.feature-icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(197, 168, 128, 0.35);
+    color: #8C6D48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.feature-text-box strong {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1A1311;
+}
+
+.feature-text-box span {
+    font-size: 0.8rem;
+    color: #7A6660;
+    line-height: 1.4;
+}
+
+/* Moldura Fotográfica com Assinatura Clean */
+.story-photo-frame {
     position: relative;
-    border-radius: 20px;
+    border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 14px 35px rgba(255, 105, 145, 0.16);
-    border: 3px solid #FFFFFF;
+    box-shadow: 0 16px 40px -8px rgba(28, 20, 18, 0.12);
+    border: 1px solid rgba(226, 215, 210, 0.7);
+    background: #FCFAF8;
 }
 
-.story-photo-img {
+.story-photo-frame .story-photo-img {
     width: 100%;
     height: 100%;
     aspect-ratio: 4 / 3.4;
     object-fit: cover;
+    display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.story-photo-wrapper:hover .story-photo-img {
-    transform: scale(1.05);
+.story-photo-frame:hover .story-photo-img {
+    transform: scale(1.04);
 }
 
-.story-photo-badge {
+.story-photo-signature {
     position: absolute;
-    bottom: 14px;
-    left: 14px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 8px 16px;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(226, 215, 210, 0.8);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.story-photo-badge strong {
-    display: block;
-    font-size: 0.84rem;
-    color: var(--text-dark);
+.story-photo-signature .sig-name {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1A1311;
 }
 
-.story-photo-badge span {
+.story-photo-signature .sig-role {
     font-size: 0.72rem;
-    color: #DC2743;
-    font-weight: 600;
+    color: #8C6D48;
+    font-weight: 500;
 }
 
 /* ==========================================================================
-   5. SEÇÃO CURSOS — CARDS INSPIRADOS NO DESIGN DE BELEZA (ROSA GLOSSY + CARD FLUTUANTE)
+   5. SEÇÃO CURSOS — ARQUITETURA MASTERCLASS INTEGRADA
    ========================================================================== */
 .courses-section {
     padding: clamp(70px, 8vw, 110px) 0;
-    background: linear-gradient(180deg, var(--bg-base) 0%, #FFF5F7 50%, var(--bg-base) 100%);
+    background: #FCFAF8;
 }
 
-.section-head {
-    max-width: 680px;
-    margin: 0 auto 50px auto;
+.courses-main-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.1rem, 3.8vw, 2.8rem);
+    font-weight: 700;
+    color: #1A1311;
+    letter-spacing: -0.01em;
+    margin: 8px 0 12px 0;
 }
 
-.section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.3rem, 4.2vw, 3.4rem);
-    font-weight: 400;
-    color: var(--text-dark);
-    margin: 10px 0;
+.courses-main-subtitle {
+    font-size: 1rem;
+    color: #6E5C56;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-.section-subtitle {
-    font-size: 1.02rem;
-    color: var(--text-muted);
-}
-
-.beauty-cards-grid {
+.academy-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: clamp(22px, 3vw, 30px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(22px, 2.5vw, 32px);
+    margin-top: 48px;
 }
 
-/* Card Estilo Referência: Moldura Rosa com Foto e Card Flutuante Branco */
-.beauty-card {
-    position: relative;
-    background: #FFF1F5;
-    border: 1.5px solid #FFD4DF;
-    border-radius: 28px;
+.academy-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 215, 210, 0.8);
+    border-radius: 22px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 14px 40px rgba(255, 105, 145, 0.10);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 8px 24px -4px rgba(28, 20, 18, 0.04);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    position: relative;
 }
 
-.beauty-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 24px 50px rgba(255, 46, 99, 0.20);
-    border-color: #FF85A1;
+.academy-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -8px rgba(28, 20, 18, 0.10);
+    border-color: rgba(197, 168, 128, 0.7);
 }
 
-.beauty-card-featured {
-    border-color: #FF4D79;
-    box-shadow: 0 18px 45px rgba(255, 77, 121, 0.16);
-    background: #FFF0F4;
+.academy-card-featured {
+    border: 1.5px solid rgba(197, 168, 128, 0.85);
+    box-shadow: 0 12px 36px -4px rgba(140, 109, 72, 0.12);
 }
 
-.beauty-card-media {
+.academy-featured-ribbon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #1A1311;
+    color: #FFFFFF;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.academy-media-wrap {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 13;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
+    background: #F2ECE9;
 }
 
-.beauty-card-img {
+.academy-card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.beauty-card:hover .beauty-card-img {
-    transform: scale(1.08);
+.academy-card:hover .academy-card-img {
+    transform: scale(1.05);
 }
 
-.beauty-card-overlay {
+.academy-badge {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, rgba(255, 241, 245, 0.9) 0%, transparent 100%);
-    pointer-events: none;
-}
-
-.beauty-badge-pill {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 5px 14px;
+    top: 14px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 214, 209, 0.8);
+    padding: 5px 12px;
     border-radius: 999px;
-    font-size: 0.68rem;
+    font-size: 0.64rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #DC2743;
+    letter-spacing: 0.12em;
+    color: #382E2B;
     text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.12);
     z-index: 2;
 }
 
-.beauty-pill-featured {
-    background: linear-gradient(135deg, #FF6584 0%, #DC2743 100%);
-    color: #FFFFFF;
+.academy-badge-featured {
+    background: rgba(255, 255, 255, 0.96);
+    color: #8C6D48;
+    border-color: rgba(197, 168, 128, 0.6);
 }
 
-/* Card Branco Flutuante Sobreposto na Base */
-.beauty-card-content {
-    background: #FFFFFF;
-    border-radius: 22px;
-    margin: -32px 14px 14px 14px;
-    padding: 24px 20px 18px 20px;
-    box-shadow: 0 8px 24px rgba(255, 105, 145, 0.08);
-    position: relative;
-    z-index: 3;
+.academy-body {
+    padding: 24px 22px 22px 22px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     flex-grow: 1;
 }
 
-.beauty-card-title {
-    font-family: var(--font-serif);
-    font-size: 1.42rem;
-    font-weight: 600;
-    color: #1A1415;
+.academy-category {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #9C8277;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.academy-title {
+    font-family: var(--font-sans);
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #1A1311;
     line-height: 1.25;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.beauty-card-desc {
+.academy-desc {
     font-size: 0.88rem;
-    color: #5C5255;
+    color: #6E5C56;
     line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
+    margin-bottom: 18px;
 }
 
-.beauty-card-action {
+.academy-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: auto;
+    gap: 7px;
+    border-top: 1px solid rgba(225, 214, 209, 0.5);
+    padding-top: 14px;
 }
 
-/* Botão Circular Rosa com Seta (Exatamente como na Referência) */
-.btn-beauty-circle-arrow {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #FFE4EC;
-    color: #DC2743;
+.academy-perks li {
+    font-size: 0.8rem;
+    color: #4A3C38;
+    font-weight: 500;
+}
+
+.btn-academy-action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.35s ease;
-    box-shadow: 0 4px 14px rgba(220, 39, 67, 0.15);
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: #FAF8F6;
+    border: 1px solid rgba(225, 214, 209, 0.8);
+    color: #1A1311;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: auto;
 }
 
-.btn-beauty-circle-arrow:hover,
-.beauty-card:hover .btn-beauty-circle-arrow {
-    background: linear-gradient(135deg, #FF6584 0%, #DC2743 100%);
-    color: #FFFFFF;
-    transform: scale(1.12);
-    box-shadow: 0 8px 22px rgba(220, 39, 67, 0.35);
+.btn-academy-action:hover {
+    background: #1A1311;
+    border-color: #1A1311;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(26, 19, 17, 0.18);
 }
 
-.btn-circle-featured {
-    background: #FFD4E0;
-    color: #B81D3E;
+.btn-academy-featured {
+    background: #1A1311;
+    border-color: #1A1311;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(26, 19, 17, 0.16);
 }
 
-/* Indicador de 3 Pontos como na Referência */
-.beauty-dots-indicator {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    align-items: center;
+.btn-academy-featured:hover {
+    background: #332724;
+    border-color: #332724;
+    box-shadow: 0 8px 22px rgba(26, 19, 17, 0.28);
 }
 
-.beauty-dots-indicator .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #FFD4DF;
-    transition: all 0.3s ease;
+/* Responsividade de Academy e Story */
+@media (max-width: 1040px) {
+    .academy-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.beauty-dots-indicator .dot.active,
-.beauty-card:hover .beauty-dots-indicator .dot.active {
-    background: #FF2E63;
-    width: 8px;
-    height: 8px;
+@media (max-width: 900px) {
+    .story-luxury-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+}
+
+@media (max-width: 680px) {
+    .academy-cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================================================
