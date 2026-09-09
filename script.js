@@ -183,4 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Silencioso: mantém o fallback instantâneo dos 6 posts pré-renderizados
             });
     }
+
+    // 5. Header Sólido no Topo e Translucidez Leve apenas no Scroll (Aesop / Rhode Style)
+    const mainHeader = document.getElementById('mainHeader');
+    if (mainHeader) {
+        const handleHeaderScroll = () => {
+            if (window.scrollY > 20) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+    }
 });

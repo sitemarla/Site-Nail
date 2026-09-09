@@ -1,60 +1,59 @@
 /* ==========================================================================
    MARLA SAKAMOTO — NAIL DESIGN & EDUCADORA
-   Design System: Luxury Beauty Brand + Efeitos de UX/UI & Photoshop Feel
+   Design System: Warm Modern Luxury (Aesop, Rhode, Rare Beauty & Charlotte Tilbury)
    ========================================================================== */
 
 :root {
-    /* Paleta Muito Clara, Luminosa e Glossy Beauty */
-    --bg-base: #FCFAF9;
+    /* 1. Bases & Telas (Espaço Negativo Amplo, Acolhedor e Luminoso) */
+    --bg-canvas: #FAF8F5;          /* Linho cru / Porcelana suave */
+    --bg-base: #FAF8F5;
+    --bg-surface: #FFFFFF;         /* Branco puro para cartões nobres */
     --bg-white: #FFFFFF;
-    --bg-subtle: #FFF2F5;
-    --bg-pink-soft: #FFF0F4;
-    --bg-pink-light: #FFE4EC;
-    --bg-pink-card: #FFF5F7;
-    
-    /* Tons de Rosa e Beleza Contemporânea */
-    --pink-bubble: #FF85A1;
-    --pink-vibrant: #FF2E63;
-    --pink-coral: #FF6B8B;
-    --pink-accent: #E63960;
-    --pink-glow: rgba(255, 46, 99, 0.16);
-    
-    /* Contraste & Tipografia */
-    --text-dark: #1A1415;
-    --text-body: #4A4042;
-    --text-muted: #8A7B7E;
-    
-    /* Linhas e Acentos Refinados */
-    --border: #F2E1E6;
-    --border-light: rgba(242, 225, 230, 0.7);
-    --border-accent: #FFB3C6;
-    --border-pink: #FFD4DF;
-    
-    /* Acentos Nobres Rosé / Champanhe */
-    --accent-soft: #FFF0F4;
-    --accent-glow: rgba(255, 105, 145, 0.22);
-    
-    /* Degradês de Beleza Glossy & Instagram */
-    --insta-sunset: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    --pink-glossy: linear-gradient(135deg, #FF758C 0%, #FF2E63 100%);
-    --pink-circle: linear-gradient(135deg, #FFDDE4 0%, #FFB6C8 100%);
-    
-    /* WhatsApp */
-    --wa-green: #1F9D55;
-    --wa-green-hover: #178345;
-    
-    /* Fontes */
+    --bg-nude-warm: #F4EFEB;       /* Nude amanteigado para seções alternadas */
+    --bg-almond-soft: #EDE4DC;     /* Amêndoa glazed para acentos e chips */
+    --bg-subtle: #F7F2ED;
+
+    /* 2. Textos & Tipografia (Sem a dureza do preto puro) */
+    --text-primary: #1C1717;       /* Espresso escuro editorial */
+    --text-dark: #1C1717;
+    --text-editorial: #383132;     /* Cinza quente encorpado */
+    --text-body: #5A5052;          /* Neutro acolhedor para leitura fluida */
+    --text-muted: #8C8082;         /* Cinza nude para metadados e legendas */
+
+    /* 3. Acentos de Alta Cosmética (Rhode & Rare Beauty) */
+    --accent-bronze: #8F5B4E;      /* Terracota bronze sutil */
+    --accent-rose: #B87565;        /* Rosé gold quente e orgânico */
+    --accent-champagne: #D8C4AF;   /* Champagne amanteigado para detalhes */
+    --accent-sand: #C8B8A6;        /* Areia nobre para ícones e linhas */
+    --border-accent: #C9A98A;
+
+    /* 4. Conversão & Ação Direta */
+    --cta-emerald: #1B8A5A;        /* Verde botânico sofisticado para WhatsApp */
+    --cta-emerald-hover: #147249;  /* Variação profunda para hover */
+    --cta-charcoal: #1C1717;       /* Botão editorial sofisticado */
+    --wa-green: #1B8A5A;
+    --wa-green-hover: #147249;
+
+    /* 5. Linhas, Bordas e Sombras Orgânicas */
+    --border: #E8DFD5;
+    --border-subtle: #E8DFD5;
+    --border-light: rgba(232, 223, 213, 0.65);
+    --border-hairline: rgba(216, 196, 175, 0.45);
+    --border-pink: #E8DFD5;
+    --border-gold: rgba(201, 169, 138, 0.4);
+
+    --shadow-feather: 0 4px 20px -4px rgba(28, 23, 23, 0.04);
+    --shadow-ambient: 0 20px 45px -15px rgba(28, 23, 23, 0.07);
+    --shadow-hover: 0 25px 50px -12px rgba(28, 23, 23, 0.12);
+    --shadow-soft: 0 4px 20px rgba(28, 23, 23, 0.04);
+    --shadow-card: 0 12px 36px -4px rgba(28, 23, 23, 0.05);
+
+    /* 6. Fontes Editoriais */
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-script: 'Pinyon Script', 'Great Vibes', 'Alex Brush', cursive;
     
-    /* Dimensões & Sombras Multicamadas */
-    --max-w: 1100px;
-    --shadow-soft: 0 4px 20px rgba(255, 105, 145, 0.05);
-    --shadow-card: 0 10px 30px rgba(255, 105, 145, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
-    --shadow-hover: 0 20px 45px rgba(255, 46, 99, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
-    --shadow-glow: 0 0 50px rgba(255, 105, 145, 0.35);
-    
+    /* 7. Dimensões & Transições */
+    --max-w: 1240px;
     --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -122,23 +121,31 @@ a {
     background: linear-gradient(90deg, #D4A394 0%, #E6C2B4 50%, #C88F80 100%);
 }
 
-/* 2. Header com Efeito Vidro Fosco (Glassmorphism) */
+/* 2. Header Sólido no Topo com Translucidez Apenas no Scroll (Aesop / Rhode Style) */
 .header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(252, 251, 249, 0.96);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 16px 0;
+    transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease, padding 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 24px -2px rgba(28, 23, 23, 0.04);
+    border-bottom-color: rgba(232, 223, 213, 0.85);
+    padding: 12px 0;
 }
 
 .header-inner {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 28px;
+    gap: 32px;
 }
 
 .brand {
@@ -155,10 +162,10 @@ a {
 
 .logo {
     font-family: var(--font-sans);
-    font-size: 1.14rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    color: #1A1311;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
     line-height: 1.1;
     text-transform: uppercase;
     white-space: nowrap;
@@ -168,18 +175,18 @@ a {
     font-family: var(--font-sans);
     font-size: 0.52rem;
     font-weight: 600;
-    letter-spacing: 0.28em;
-    color: #967C71;
+    letter-spacing: 0.24em;
+    color: var(--accent-bronze);
     line-height: 1;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 5px;
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-/* Navegação Desktop Centralizada em Cápsula de Vidro Fosco (Ultra Moderna) */
+/* Navegação Desktop Minimalista e Acolhedora */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -189,38 +196,29 @@ a {
 .nav-list {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(225, 214, 209, 0.65);
-    border-radius: 999px;
-    padding: 4px 6px;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 18px -2px rgba(28, 20, 18, 0.04);
+    gap: 6px;
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    color: #554744;
+    color: var(--text-body);
     text-decoration: none;
-    padding: 7px 13px;
+    padding: 8px 14px;
     border-radius: 999px;
-    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    letter-spacing: 0.01em;
+    transition: var(--transition);
+    letter-spacing: 0.02em;
     white-space: nowrap;
     position: relative;
 }
 
 .nav-link:hover {
-    background: #FFFFFF;
-    color: #1A1311;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transform: translateY(-1px);
+    color: var(--text-primary);
+    background: var(--bg-nude-warm);
 }
 
 /* Botão Hamburger Mobile */
@@ -408,61 +406,59 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(226, 215, 210, 0.7);
-    padding: 7px 14px;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    padding: 8px 16px;
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 600;
-    color: #3C302E;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-    transition: all 0.25s ease;
+    color: var(--text-body);
+    transition: var(--transition);
     white-space: nowrap;
     flex-shrink: 0;
     text-decoration: none;
-    backdrop-filter: blur(8px);
 }
 
 .btn-header-insta .insta-svg-icon {
-    color: #E1306C;
+    color: var(--accent-bronze);
     transition: transform 0.25s ease;
 }
 
 .btn-header-insta:hover {
-    border-color: rgba(225, 48, 108, 0.4);
-    background: #FFFFFF;
-    color: #E1306C;
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    background: var(--bg-nude-warm);
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(225, 48, 108, 0.12);
 }
 
 .btn-header-insta:hover .insta-svg-icon {
     transform: scale(1.15) rotate(-5deg);
+    color: var(--accent-rose);
 }
 
 .btn-header-wa {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #1C1514;
+    background: var(--cta-emerald);
     color: #FFFFFF !important;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 8px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 9px 20px;
     border-radius: 999px;
     font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    box-shadow: 0 4px 14px rgba(28, 21, 20, 0.18);
-    transition: all 0.25s ease;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 14px rgba(27, 138, 90, 0.25);
+    transition: var(--transition);
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .btn-header-wa:hover {
-    background: #332724;
+    background: var(--cta-emerald-hover);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(28, 21, 20, 0.26);
+    box-shadow: 0 6px 20px rgba(27, 138, 90, 0.35);
     color: #FFFFFF !important;
 }
 
@@ -470,722 +466,336 @@ a {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #25D366;
-    box-shadow: 0 0 8px #25D366;
+    background: #FFFFFF;
+    box-shadow: 0 0 6px #FFFFFF;
     animation: statusPulse 2s infinite;
 }
 
 @keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-
-/* 3. HERO — Composição Fotográfica & Photoshop Feel */
-.hero {
-    position: relative;
-    padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 8vw, 110px) 0;
-    overflow: hidden;
-}
-
-/* Marca d'água gigante translúcida no fundo */
-.watermark-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-serif);
-    font-size: clamp(8rem, 20vw, 18rem);
-    font-weight: 600;
-    color: rgba(232, 225, 215, 0.25);
-    letter-spacing: 12px;
-    pointer-events: none;
-    z-index: 1;
-    user-select: none;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: clamp(40px, 6vw, 70px);
-    align-items: center;
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); }
+    70% { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
 /* ==========================================================================
-   NOVA COMPOSIÇÃO: HERO HORIZONTAL COM CORES DO INSTAGRAM
+   3. HERO BANNER QUASE TELA TODA (WARM MODERN LUXURY)
    ========================================================================== */
-.hero-horizontal {
-    padding: clamp(40px, 5vw, 70px) 0;
-}
-
-.hero-horizontal-card {
+.hero-warm-luxury {
     position: relative;
-    background: #FFFFFF;
-    border: 1px solid rgba(212, 163, 148, 0.45);
-    border-radius: 24px;
-    padding: clamp(26px, 4vw, 42px);
-    box-shadow: 0 20px 60px rgba(30, 24, 21, 0.07), 0 4px 16px rgba(0, 0, 0, 0.02);
+    min-height: calc(100vh - 75px);
+    display: flex;
+    align-items: center;
+    padding: clamp(48px, 6vw, 80px) 0;
+    background: var(--bg-canvas);
     overflow: hidden;
 }
 
-/* Efeito de Luz / Ambient Glow com Tons do Instagram */
-.insta-ambient-glow {
+.hero-ambient-glow {
     position: absolute;
-    top: -90px;
-    left: -70px;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(240, 148, 51, 0.14) 0%, rgba(220, 39, 67, 0.11) 35%, rgba(188, 24, 136, 0.05) 60%, transparent 75%);
-    filter: blur(45px);
+    top: 5%;
+    right: -5%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(238, 226, 214, 0.45) 0%, rgba(250, 248, 245, 0) 70%);
+    filter: blur(65px);
     pointer-events: none;
-    border-radius: 50%;
     z-index: 1;
 }
 
-/* Faixa Superior com Degradê Oficial do Instagram */
-.insta-top-accent-line {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-container {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    height: 3.5px;
-    background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-/* Top bar dentro do card */
-.hero-card-header {
-    display: flex;
-    justify-content: space-between;
+.hero-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(40px, 5.5vw, 76px);
     align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 26px;
+    width: 100%;
+}
+
+/* Coluna Esquerda: Conteúdo & Conversão */
+.hero-editorial-content {
+    display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 2;
 }
 
-.tag-pill-insta {
-    background: rgba(253, 242, 239, 0.95);
-    border: 1px solid rgba(220, 39, 67, 0.25);
-    color: #B83A4B;
-    margin-bottom: 0;
-}
-
-.hero-insta-chip {
+.hero-proof-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: #FFFFFF;
-    border: 1px solid rgba(220, 39, 67, 0.25);
-    padding: 6px 14px;
+    border: 1px solid var(--border-subtle);
+    padding: 6px 16px;
     border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    transition: var(--transition);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-body);
+    box-shadow: var(--shadow-feather);
+    margin-bottom: 22px;
+    width: fit-content;
 }
 
-.hero-insta-chip .insta-svg-icon {
-    color: #E1306C;
-    transition: var(--transition);
+.proof-stars {
+    color: #C9A98A;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
 }
 
-.hero-insta-chip:hover {
-    border-color: #E1306C;
-    color: #E1306C;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(225, 48, 108, 0.22);
+.proof-divider {
+    color: var(--accent-sand);
 }
 
-.hero-insta-chip:hover .insta-svg-icon {
-    transform: scale(1.15) rotate(-5deg);
+.hero-editorial-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.7rem, 4.6vw, 4.3rem);
+    font-weight: 400;
+    line-height: 1.07;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
 }
 
-.insta-live-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #E1306C;
-    box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
-    animation: instaPulse 2s infinite;
+.serif-italic {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-bronze);
 }
 
-@keyframes instaPulse {
-    0% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7); }
-    70% { box-shadow: 0 0 0 6px rgba(225, 48, 108, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(225, 48, 108, 0); }
+.hero-editorial-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-body);
+    max-width: 530px;
+    margin-bottom: 34px;
 }
 
-/* Grid Horizontal do Corpo do Hero */
-.hero-horizontal-body {
-    display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: clamp(28px, 4vw, 52px);
+.hero-actions-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 38px;
+}
+
+.btn-hero-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--cta-emerald);
+    color: #FFFFFF !important;
+    padding: 17px 30px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(27, 138, 90, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-hero-wa:hover {
+    background: var(--cta-emerald-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(27, 138, 90, 0.38);
+}
+
+.btn-hero-wa .wa-btn-svg {
+    flex-shrink: 0;
+}
+
+.btn-hero-wa .arrow-icon {
+    transition: transform 0.2s ease;
+}
+
+.btn-hero-wa:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 16px 26px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-feather);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-hero-secondary:hover {
+    background: var(--bg-nude-warm);
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-ambient);
+}
+
+/* Faixa Tátil de Prova & Pilares */
+.hero-trust-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border-subtle);
+    max-width: 540px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.trust-icon {
+    color: var(--accent-bronze);
+    font-size: 0.82rem;
+    flex-shrink: 0;
+}
+
+.trust-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust-text strong {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.trust-text span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* Coluna Direita: Fotografia Monumental & Elementos Sobrepostos */
+.hero-editorial-visual {
     position: relative;
-    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Enquadramento Fotográfico Horizontal com Moldura Instagram */
-.hero-photo-horizontal {
+.hero-visual-stage {
     position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
-.photo-story-ring {
-    padding: 3px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    box-shadow: 0 12px 36px rgba(220, 39, 67, 0.22);
-}
-
-.photo-frame-horizontal {
-    border-radius: 15px;
+.hero-photo-frame {
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
     overflow: hidden;
     background: #FFFFFF;
-    aspect-ratio: 4 / 3;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-ambient);
     position: relative;
 }
 
-.hero-img-horizontal {
+.hero-editorial-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 18%;
     filter: contrast(1.02) brightness(1.01);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.photo-frame-horizontal:hover .hero-img-horizontal {
-    transform: scale(1.04);
-}
-
-.photo-vignette-horizontal {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35%;
-    background: linear-gradient(to top, rgba(18, 14, 12, 0.45) 0%, transparent 100%);
-    pointer-events: none;
-}
-
-.photo-overlay-tag {
-    position: absolute;
-    bottom: 12px;
-    left: 14px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 5px 12px;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.glass-badge-horizontal {
-    position: absolute;
-    bottom: -15px;
-    right: -10px;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-}
-
-.badge-icon-insta {
-    background: linear-gradient(135deg, #f09433, #dc2743);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.1rem;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.glass-badge-horizontal .badge-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.badge-brand-title,
-.glass-badge-horizontal .badge-text strong.badge-brand-title,
-.story-photo-badge strong {
-    font-family: var(--font-serif);
-    font-size: 0.96rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: var(--text-dark);
-    display: block;
-    line-height: 1.2;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.badge-brand-sub {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    color: var(--text-dark);
-    font-weight: 800;
-    letter-spacing: 0.4px;
-    margin-top: 3px;
-    display: block;
-    line-height: 1.2;
-}
-
-.glass-badge-horizontal .badge-text span {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-top: 3px;
-    display: block;
-    line-height: 1.2;
-}
-
-/* Tipografia Horizontal */
-.hero-content-horizontal {
-    position: relative;
-}
-
-.hero-title-horizontal {
-    font-family: var(--font-serif);
-    font-size: clamp(1.85rem, 3.3vw, 2.95rem);
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: 0.5px;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-}
-
-.hero-tagline-horizontal {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #935345;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-
-.hero-desc-horizontal {
-    font-size: 0.98rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    margin-bottom: 26px;
-    max-width: 560px;
-}
-
-.hero-cta-horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.btn-insta-gradient {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #FFFFFF;
-    border: none;
-    box-shadow: 0 8px 24px rgba(220, 39, 67, 0.35);
-}
-
-.btn-insta-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(220, 39, 67, 0.5);
-    color: #FFFFFF;
-}
-
-.btn-secondary-horizontal {
-    background: #FFFFFF;
-    border: 1.5px solid rgba(220, 39, 67, 0.28);
-    color: var(--text-dark);
-}
-
-.btn-secondary-horizontal:hover {
-    border-color: #E1306C;
-    color: #E1306C;
-    background: #FFF9FA;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(225, 48, 108, 0.15);
-}
-
-/* Faixa Horizontal de Destaques & Autoridade (Alinhamento Simétrico & Responsivo) */
-.hero-metrics-horizontal {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(8px, 1.2vw, 16px);
-    padding-top: 24px;
-    border-top: 1px solid rgba(242, 225, 230, 0.85);
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.metric-card-box {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-pink);
-    border-radius: 16px;
-    padding: 14px 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 18px rgba(255, 105, 145, 0.05);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-.metric-card-box:hover {
-    transform: translateY(-3px);
-    background: #FFFFFF;
-    border-color: rgba(220, 39, 67, 0.35);
-    box-shadow: 0 8px 24px rgba(255, 105, 145, 0.12);
-}
-
-.metric-card-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
-    background: linear-gradient(135deg, #FFF0F4 0%, #FFE4EC 100%);
-    color: #DC2743;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(220, 39, 67, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.metric-card-box:hover .metric-card-icon {
-    transform: scale(1.08) rotate(4deg);
-    background: linear-gradient(135deg, #f09433, #dc2743);
-    color: #FFFFFF;
-}
-
-.metric-card-info {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    flex: 1;
-    overflow: hidden;
-}
-
-.metric-card-val {
-    font-family: var(--font-sans);
-    font-size: clamp(0.9rem, 1vw, 1.02rem);
-    font-weight: 800;
-    color: var(--text-dark);
-    letter-spacing: -0.2px;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.metric-card-val-sm {
-    font-size: clamp(0.82rem, 0.92vw, 0.94rem);
-    letter-spacing: -0.3px;
-}
-
-.metric-card-title {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    color: #935345;
-    margin-top: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.metric-card-sub {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Composição da Foto com Iluminação de Estúdio */
-.hero-photo-composition {
-    position: relative;
-}
-
-.ambient-glow {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: radial-gradient(circle at 60% 40%, rgba(226, 178, 166, 0.45) 0%, rgba(252, 251, 249, 0) 70%);
-    filter: blur(35px);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.photo-frame {
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 20px 50px rgba(184, 114, 101, 0.15), 0 4px 15px rgba(0, 0, 0, 0.04);
-    z-index: 2;
-    aspect-ratio: 4 / 5;
-}
-
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    filter: contrast(1.02) brightness(1.01);
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.photo-frame:hover .hero-img {
+.hero-photo-frame:hover .hero-editorial-img {
     transform: scale(1.03);
 }
 
-/* Vinheta fotográfica suave na base da imagem */
-.photo-vignette {
+.photo-warm-vignette {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 35%;
-    background: linear-gradient(to top, rgba(20, 18, 17, 0.35) 0%, rgba(20, 18, 17, 0) 100%);
+    height: 30%;
+    background: linear-gradient(to top, rgba(28, 23, 23, 0.28) 0%, transparent 100%);
     pointer-events: none;
 }
 
-/* Badge Flutuante em Glassmorphism */
-.glass-badge {
+/* Chips Flutuantes com Efeito de Vidro Fosco & Borda Tátil */
+.floating-chip {
     position: absolute;
-    bottom: -15px;
-    right: -15px;
     z-index: 3;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.88);
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
-}
-
-.badge-icon {
-    color: var(--border-accent);
-    font-size: 1.1rem;
-}
-
-.badge-text strong {
-    display: block;
-    font-size: 0.84rem;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.badge-text span {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-}
-
-/* Conteúdo Textual do Hero */
-.hero-text-content {
-    position: relative;
-    z-index: 2;
-}
-
-.tag-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-soft);
-    border: 1px solid rgba(212, 163, 148, 0.4);
-    padding: 6px 16px;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #935345;
-    margin-bottom: 20px;
-}
-
-.tag-sparkle {
-    font-size: 0.8rem;
-    color: var(--border-accent);
-}
-
-.hero-title {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 4.8rem);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -1px;
-    color: var(--text-dark);
-    margin-bottom: 12px;
-}
-
-.hero-signature {
-    font-family: var(--font-serif);
-    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: 22px;
-}
-
-.signature-highlight {
-    font-style: normal;
-    font-weight: 600;
-    color: #935345;
-    position: relative;
-}
-
-.hero-desc {
-    font-size: 1.05rem;
-    color: var(--text-body);
-    line-height: 1.75;
-    margin-bottom: 34px;
-    max-width: 520px;
-}
-
-.hero-cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 36px;
-}
-
-/* Botões com Efeito Shimmer (Brilho Deslizante de UX) */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 16px 32px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px -5px rgba(28, 23, 23, 0.08);
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
 }
 
-.btn-primary {
-    background: var(--text-dark);
-    color: #FFFFFF;
-    border: 1px solid var(--text-dark);
-    box-shadow: 0 4px 18px rgba(20, 18, 17, 0.2);
-}
-
-.btn-primary:hover {
-    background: #332F2C;
+.floating-chip:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(20, 18, 17, 0.3);
+    box-shadow: 0 14px 34px -5px rgba(28, 23, 23, 0.12);
 }
 
-.btn-shimmer::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        60deg,
-        rgba(255, 255, 255, 0) 20%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0) 80%
-    );
-    transform: translateX(-100%);
-    transition: transform 0.75s ease;
+.chip-top-left {
+    top: 24px;
+    left: -24px;
 }
 
-.btn-shimmer:hover::after {
-    transform: translateX(100%);
+.chip-bottom-right {
+    bottom: 24px;
+    right: -24px;
 }
 
-.btn-secondary {
-    background: #FFFFFF;
-    color: var(--text-dark);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-soft);
+.chip-sparkle {
+    color: var(--accent-bronze);
+    font-size: 0.9rem;
 }
 
-.btn-secondary:hover {
-    background: var(--bg-subtle);
-    border-color: var(--text-dark);
-    transform: translateY(-2px);
+.chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cta-emerald);
+    box-shadow: 0 0 0 3px rgba(27, 138, 90, 0.2);
 }
 
-.arrow-icon {
-    transition: transform 0.25s ease;
-}
-
-.btn:hover .arrow-icon {
-    transform: translateX(4px);
-}
-
-/* Indicadores de Autoridade */
-.hero-metrics {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-}
-
-.metric {
+.chip-content {
     display: flex;
     flex-direction: column;
 }
 
-.metric-num {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    line-height: 1.1;
-}
-
-.metric-lbl {
-    font-size: 0.72rem;
+.chip-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    font-weight: 500;
 }
 
-.metric-div {
-    width: 1px;
-    height: 28px;
-    background: var(--border);
+.chip-sub {
+    font-size: 0.68rem;
+    color: var(--text-muted);
 }
 
 /* ==========================================================================
@@ -2343,13 +1953,6 @@ a {
 }
 
 /* 8. RESPONSIVIDADE PRECISA (MOBILE FIRST) */
-@media (max-width: 1120px) {
-    .hero-metrics-horizontal {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-}
-
 @media (max-width: 1080px) {
     .header-inner {
         display: flex;
@@ -2365,50 +1968,59 @@ a {
     }
 }
 
+@media (max-width: 1024px) {
+    .hero-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .hero-editorial-content {
+        order: 1;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-proof-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-editorial-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions-group {
+        justify-content: center;
+    }
+
+    .hero-trust-strip {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-editorial-visual {
+        order: 2;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 900px) {
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .hero-photo-composition {
+    .story-luxury-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .academy-cards-grid {
+        grid-template-columns: 1fr;
         max-width: 440px;
         margin: 0 auto;
-    }
-
-    .glass-badge {
-        bottom: -10px;
-        right: 10px;
-    }
-
-    .hero-cta-group {
-        flex-direction: column;
-    }
-
-    .hero-cta-group .btn {
-        width: 100%;
-    }
-
-    .hero-horizontal-body {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .hero-metrics-horizontal {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .metric-h-div {
-        display: none;
-    }
-
-    .hero-cta-horizontal {
-        flex-direction: column;
-    }
-
-    .hero-cta-horizontal .btn {
-        width: 100%;
     }
 
     .insta-visual-grid {
@@ -2428,17 +2040,6 @@ a {
     .btn-insta-main {
         width: 100%;
         justify-content: center;
-    }
-
-    .story-beauty-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .beauty-cards-grid {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-        margin: 0 auto;
     }
 }
 
@@ -2462,71 +2063,66 @@ a {
     }
 
     .btn-header-wa {
-        padding: 8px 12px;
+        padding: 8px 14px;
         font-size: 0.74rem;
         white-space: nowrap;
     }
 
-    .hero-horizontal-card {
-        padding: 24px 16px 20px 16px;
-        border-radius: 20px;
+    .hero-warm-luxury {
+        padding: 36px 0 46px;
+        min-height: auto;
     }
 
-    .hero-card-header {
+    .hero-proof-badge {
+        font-size: 0.68rem;
+        padding: 5px 12px;
+    }
+
+    .hero-editorial-title {
+        font-size: clamp(2.1rem, 7.5vw, 2.7rem);
+        line-height: 1.12;
+    }
+
+    .hero-actions-group {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 20px;
+        width: 100%;
     }
 
-    .hero-title-horizontal {
-        font-size: 2rem;
+    .btn-hero-wa,
+    .btn-hero-secondary {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .glass-badge-horizontal {
-        right: 0;
-        bottom: -10px;
-        padding: 8px 14px;
-        gap: 8px;
-    }
-
-    .badge-brand-title {
-        font-size: 0.86rem;
-    }
-
-    .hero-metrics-horizontal {
+    .hero-trust-strip {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
+        text-align: left;
+        width: 100%;
     }
 
-    .photo-frame-horizontal {
-        aspect-ratio: 4 / 3;
+    .floating-chip {
+        padding: 10px 14px;
     }
 
-    .story-card-beauty {
+    .chip-top-left {
+        top: 14px;
+        left: -10px;
+    }
+
+    .chip-bottom-right {
+        bottom: 14px;
+        right: -10px;
+    }
+
+    .story-card-luxury {
         padding: 24px 16px;
         border-radius: 20px;
-    }
-
-    .story-title {
-        font-size: 1.85rem;
-    }
-
-    .beauty-cards-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
     }
 
     .contact-box-luxury {
         padding: 32px 18px;
         border-radius: 22px;
-    }
-
-    .btn-whatsapp-luxury, .btn-instagram-prominent {
-        width: 100%;
-        max-width: 100%;
-        padding: 14px 16px;
-        font-size: 0.78rem;
     }
 
     .insta-visual-grid {
@@ -2567,33 +2163,14 @@ a {
     }
 
     .logo {
-        font-size: 1.2rem;
-        letter-spacing: 1.8px;
+        font-size: 1.05rem;
+        letter-spacing: 0.16em;
     }
 
-    .hero-title-horizontal {
-        font-size: 1.75rem;
-    }
-
-    .hero-tagline-horizontal {
-        font-size: 0.84rem;
-    }
-
-    .btn {
-        padding: 13px 20px;
-        font-size: 0.78rem;
-    }
-
-    .btn-header-insta span, .btn-header-wa span:last-child {
-        font-size: 0.7rem;
-    }
-
-    .glass-badge-horizontal {
-        padding: 6px 12px;
-    }
-
-    .badge-brand-title {
-        font-size: 0.8rem;
-        letter-spacing: 1px;
+    .chip-top-left,
+    .chip-bottom-right {
+        position: static;
+        margin-top: 10px;
+        width: 100%;
     }
 }
