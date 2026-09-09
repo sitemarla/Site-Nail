@@ -142,30 +142,44 @@ a {
 }
 
 .brand {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     text-decoration: none;
     flex-shrink: 0;
+    transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+    opacity: 0.85;
 }
 
 .logo {
-    font-family: var(--font-serif);
-    font-size: 1.32rem;
-    letter-spacing: 2.2px;
-    font-weight: 600;
-    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 1.14rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #1A1311;
     line-height: 1.1;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .logo-sub {
-    font-size: 0.58rem;
-    letter-spacing: 2px;
+    font-family: var(--font-sans);
+    font-size: 0.52rem;
     font-weight: 600;
-    color: var(--text-muted);
-    margin-top: 3px;
+    letter-spacing: 0.28em;
+    color: #967C71;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-top: 4px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* Navegação Desktop Centralizada com Distribuição Equilibrada */
+/* Navegação Desktop Centralizada em Cápsula de Vidro Fosco (Ultra Moderna) */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -173,46 +187,40 @@ a {
 }
 
 .nav-list {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 24px;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(225, 214, 209, 0.65);
+    border-radius: 999px;
+    padding: 4px 6px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 18px -2px rgba(28, 20, 18, 0.04);
     list-style: none;
     margin: 0;
-    padding: 0;
 }
 
 .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: var(--text-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #554744;
     text-decoration: none;
-    position: relative;
-    padding: 6px 0;
-    transition: color 0.25s ease;
-    letter-spacing: 0.3px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.01em;
     white-space: nowrap;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #f09433, #dc2743);
-    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 2px;
+    position: relative;
 }
 
 .nav-link:hover {
-    color: #DC2743;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+    background: #FFFFFF;
+    color: #1A1311;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
 }
 
 /* Botão Hamburger Mobile */
@@ -400,31 +408,32 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: #FFFFFF;
-    border: 1.5px solid rgba(225, 48, 108, 0.25);
-    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(226, 215, 210, 0.7);
+    padding: 7px 14px;
     border-radius: 999px;
     font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    box-shadow: 0 2px 8px rgba(225, 48, 108, 0.04);
-    transition: var(--transition);
+    font-weight: 600;
+    color: #3C302E;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s ease;
     white-space: nowrap;
     flex-shrink: 0;
     text-decoration: none;
+    backdrop-filter: blur(8px);
 }
 
 .btn-header-insta .insta-svg-icon {
     color: #E1306C;
-    transition: var(--transition);
+    transition: transform 0.25s ease;
 }
 
 .btn-header-insta:hover {
-    border-color: #E1306C;
-    background: #FFF5F8;
+    border-color: rgba(225, 48, 108, 0.4);
+    background: #FFFFFF;
     color: #E1306C;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(225, 48, 108, 0.18);
+    box-shadow: 0 4px 14px rgba(225, 48, 108, 0.12);
 }
 
 .btn-header-insta:hover .insta-svg-icon {
@@ -435,41 +444,41 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #25D366 0%, #1F9D55 100%);
+    background: #1C1514;
     color: #FFFFFF !important;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 8px 18px;
     border-radius: 999px;
     font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    box-shadow: 0 4px 14px rgba(31, 157, 85, 0.28);
-    transition: var(--transition);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 14px rgba(28, 21, 20, 0.18);
+    transition: all 0.25s ease;
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .btn-header-wa:hover {
-    background: linear-gradient(135deg, #2ae06c 0%, #178345 100%);
+    background: #332724;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(31, 157, 85, 0.45);
+    box-shadow: 0 6px 20px rgba(28, 21, 20, 0.26);
     color: #FFFFFF !important;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    background: #25D366;
+    box-shadow: 0 0 8px #25D366;
     animation: statusPulse 2s infinite;
 }
 
 @keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(31, 157, 85, 0.6); }
-    70% { box-shadow: 0 0 0 6px rgba(31, 157, 85, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(31, 157, 85, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 /* 3. HERO — Composição Fotográfica & Photoshop Feel */
@@ -2291,7 +2300,7 @@ a {
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1080px) {
     .header-inner {
         display: flex;
         justify-content: space-between;
