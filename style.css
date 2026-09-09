@@ -1104,74 +1104,110 @@ a {
 }
 
 /* ==========================================================================
-   5. SEÇÃO CURSOS — ARQUITETURA MASTERCLASS INTEGRADA
+   5. SEÇÃO CURSOS — ARQUITETURA MASTERCLASS INTEGRADA (WARM LUXURY)
    ========================================================================== */
 .courses-section {
-    padding: clamp(70px, 8vw, 110px) 0;
-    background: #FCFAF8;
+    padding: clamp(72px, 8vw, 110px) 0;
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
 }
 
-.courses-main-title {
+.courses-ambient-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(235, 222, 211, 0.45) 0%, rgba(247, 243, 238, 0) 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.courses-editorial-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    margin: 10px auto 14px;
+    max-width: 780px;
+}
+
+.courses-editorial-title .serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-bronze);
+}
+
+.courses-editorial-subtitle {
     font-family: var(--font-sans);
-    font-size: clamp(2.1rem, 3.8vw, 2.8rem);
-    font-weight: 700;
-    color: #1A1311;
-    letter-spacing: -0.01em;
-    margin: 8px 0 12px 0;
-}
-
-.courses-main-subtitle {
-    font-size: 1rem;
-    color: #6E5C56;
-    max-width: 620px;
+    font-size: 1.02rem;
+    color: var(--text-body);
+    max-width: 660px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.68;
 }
 
 .academy-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(22px, 2.5vw, 32px);
-    margin-top: 48px;
+    margin-top: 52px;
+    position: relative;
+    z-index: 2;
 }
 
 .academy-card {
     background: #FFFFFF;
-    border: 1px solid rgba(226, 215, 210, 0.8);
-    border-radius: 22px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 8px 24px -4px rgba(28, 20, 18, 0.04);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    box-shadow: 0 10px 30px -6px rgba(28, 23, 23, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     position: relative;
 }
 
 .academy-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -8px rgba(28, 20, 18, 0.10);
-    border-color: rgba(197, 168, 128, 0.7);
+    box-shadow: 0 20px 42px -8px rgba(28, 23, 23, 0.12);
+    border-color: rgba(179, 139, 109, 0.6);
 }
 
+/* Card Destaque: Obsidian Glaze com Borda Champagne */
 .academy-card-featured {
-    border: 1.5px solid rgba(197, 168, 128, 0.85);
-    box-shadow: 0 12px 36px -4px rgba(140, 109, 72, 0.12);
+    background: #1C1615;
+    border: 1.5px solid rgba(214, 185, 149, 0.6);
+    box-shadow: 0 16px 44px -6px rgba(28, 20, 18, 0.22);
+}
+
+.academy-card-featured:hover {
+    border-color: rgba(214, 185, 149, 0.9);
+    box-shadow: 0 24px 50px -6px rgba(28, 20, 18, 0.32);
 }
 
 .academy-featured-ribbon {
     position: absolute;
     top: 14px;
     right: 14px;
-    background: #1A1311;
-    color: #FFFFFF;
-    font-size: 0.64rem;
-    font-weight: 700;
+    background: #C5A880;
+    color: #1C1615;
+    font-size: 0.66rem;
+    font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 999px;
     z-index: 3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .academy-media-wrap {
@@ -1187,7 +1223,7 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .academy-card:hover .academy-card-img {
@@ -1198,56 +1234,69 @@ a {
     position: absolute;
     top: 14px;
     left: 14px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(225, 214, 209, 0.8);
-    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
     border-radius: 999px;
-    font-size: 0.64rem;
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #382E2B;
+    color: var(--text-primary);
     text-transform: uppercase;
     z-index: 2;
 }
 
 .academy-badge-featured {
-    background: rgba(255, 255, 255, 0.96);
-    color: #8C6D48;
-    border-color: rgba(197, 168, 128, 0.6);
+    background: rgba(28, 22, 21, 0.92);
+    color: #E8D8C8;
+    border-color: rgba(214, 185, 149, 0.4);
 }
 
 .academy-body {
-    padding: 24px 22px 22px 22px;
+    padding: 26px 24px 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .academy-category {
-    font-size: 0.64rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    color: #9C8277;
+    letter-spacing: 0.16em;
+    color: var(--accent-terracotta);
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+}
+
+.academy-cat-featured {
+    color: #C5A880;
 }
 
 .academy-title {
-    font-family: var(--font-sans);
-    font-size: 1.22rem;
-    font-weight: 700;
-    color: #1A1311;
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text-primary);
     line-height: 1.25;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.academy-card-featured .academy-title {
+    color: #FFFFFF;
 }
 
 .academy-desc {
+    font-family: var(--font-sans);
     font-size: 0.88rem;
-    color: #6E5C56;
-    line-height: 1.6;
-    margin-bottom: 18px;
+    color: var(--text-body);
+    line-height: 1.62;
+    margin-bottom: 20px;
+}
+
+.academy-card-featured .academy-desc {
+    color: #C2B4AE;
 }
 
 .academy-perks {
@@ -1256,68 +1305,131 @@ a {
     margin: 0 0 24px 0;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    border-top: 1px solid rgba(225, 214, 209, 0.5);
-    padding-top: 14px;
+    gap: 8px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 16px;
+}
+
+.academy-perks-featured {
+    border-top-color: rgba(255, 255, 255, 0.12);
 }
 
 .academy-perks li {
-    font-size: 0.8rem;
-    color: #4A3C38;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--text-body);
     font-weight: 500;
+    line-height: 1.45;
 }
 
+.academy-perks-featured li {
+    color: #E6D8D0;
+}
+
+/* Botões Comerciais de Ação com Alto Contraste */
 .btn-academy-action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     width: 100%;
-    padding: 12px 18px;
+    padding: 13px 20px;
     border-radius: 999px;
-    background: #FAF8F6;
-    border: 1px solid rgba(225, 214, 209, 0.8);
-    color: #1A1311;
-    font-size: 0.78rem;
+    background: var(--cta-emerald);
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-decoration: none;
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(27, 138, 90, 0.22);
+    transition: var(--transition);
     margin-top: auto;
 }
 
 .btn-academy-action:hover {
-    background: #1A1311;
-    border-color: #1A1311;
-    color: #FFFFFF !important;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(26, 19, 17, 0.18);
+    background: #156E47;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(27, 138, 90, 0.32);
 }
 
 .btn-academy-featured {
-    background: #1A1311;
-    border-color: #1A1311;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 14px rgba(26, 19, 17, 0.16);
+    background: var(--cta-emerald);
+    box-shadow: 0 6px 20px rgba(27, 138, 90, 0.32);
 }
 
 .btn-academy-featured:hover {
-    background: #332724;
-    border-color: #332724;
-    box-shadow: 0 8px 22px rgba(26, 19, 17, 0.28);
+    background: #156E47;
+    box-shadow: 0 10px 26px rgba(27, 138, 90, 0.42);
 }
 
-/* Responsividade de Academy e Story */
+/* Faixa de Garantia e Confiança dos Cursos */
+.courses-trust-banner {
+    margin-top: 48px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 6px 20px -4px rgba(28, 23, 23, 0.04);
+    position: relative;
+    z-index: 2;
+}
+
+.trust-banner-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trust-banner-text .banner-sparkle {
+    color: var(--accent-bronze);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.trust-banner-text p {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    color: var(--text-body);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.trust-banner-text p strong {
+    color: var(--text-primary);
+}
+
+.btn-courses-help {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-terracotta);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.btn-courses-help:hover {
+    color: var(--accent-bronze);
+    transform: translateX(3px);
+}
+
+/* Responsividade de Academy */
 @media (max-width: 1040px) {
     .academy-cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
 
-@media (max-width: 900px) {
-    .story-luxury-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
+    .courses-trust-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
     }
 }
 
