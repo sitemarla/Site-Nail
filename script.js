@@ -144,4 +144,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash && window.history && window.history.replaceState) {
         window.history.replaceState(null, '', window.location.pathname);
     }
+
+    // 4. Integração Dinâmica com a API Oficial do Instagram
+    const instaGrid = document.getElementById('instaVisualGrid');
+    if (instaGrid) {
+        fetch('/api/instagram')
+            .then(res => {
+                if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                return res.json();
+            })
+            .then(payload => {
+                if (payload && Array.isArray(payload.data) && payload.data.length > 0) {
+                    const posts = payload.data.slice(0, 6);
+                    const html = posts.map(post => {
+                        const safeCaption = (post.caption || 'Trabalho de Nail Design por Marla Sakamoto')
+                            .replace(/"/g, '&quot;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;');
+                        const badgeText = post.media_type === 'VIDEO' ? 'Reels &bull; Técnica' : 'Instagram';
+                        const ctaText = post.media_type === 'VIDEO' ? 'Assistir no Instagram &rarr;' : 'Ver no Instagram &rarr;';
+                        
+                        return `
+                        <a href="${post.permalink}" target="_blank" rel="noopener noreferrer" class="insta-grid-item" title="${safeCaption.slice(0, 70)}" aria-label="Ver post no Instagram">
+                            <div class="insta-thumb-box">
+                                <img src="${post.media_url}" alt="${safeCaption.slice(0, 80)}" class="insta-thumb-img" width="300" height="300" loading="lazy" decoding="async">
+                                <div class="insta-hover-overlay">
+                                    <span class="insta-post-badge">${badgeText}</span>
+                                    <span class="insta-hover-cta">${ctaText}</span>
+                                </div>
+                            </div>
+                        </a>`;
+                    }).join('');
+                    
+                    instaGrid.innerHTML = html;
+                }
+            })
+            .catch(() => {
+                // Silencioso: mantém o fallback instantâneo dos 6 posts pré-renderizados
+            });
+    }
 });

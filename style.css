@@ -1650,8 +1650,8 @@ a {
 /* Galeria de Fotos Quadradas do Instagram */
 .insta-visual-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
     margin-bottom: 24px;
 }
 
@@ -2353,7 +2353,8 @@ a {
     }
 
     .insta-visual-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
 
     .insta-header-row {
@@ -2470,7 +2471,8 @@ a {
     }
 
     .insta-visual-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .footer-inner {
