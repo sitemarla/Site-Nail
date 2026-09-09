@@ -197,4 +197,163 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', handleHeaderScroll, { passive: true });
         handleHeaderScroll();
     }
+
+    // 6. Modal Interativo de Depoimentos & Envio via WhatsApp (Warm Luxury)
+    const testimonialModal = document.getElementById('testimonialModal');
+    const openModalBtn = document.getElementById('openTestimonialModalBtn');
+    const closeModalBtn = document.getElementById('closeTestimonialModalBtn');
+    const testimonialForm = document.getElementById('testimonialForm');
+    const starBtns = document.querySelectorAll('.star-btn');
+    const ratingLabel = document.getElementById('ratingLabel');
+    const feedbackToast = document.getElementById('formFeedbackToast');
+
+    let currentRating = 5;
+    const ratingTexts = {
+        1: "1 de 5 estrelas",
+        2: "2 de 5 estrelas",
+        3: "3 de 5 estrelas",
+        4: "4 de 5 estrelas (Muito bom)",
+        5: "5 de 5 estrelas (Excelente)"
+    };
+
+    function openTestimonialModal() {
+        if (!testimonialModal) return;
+        testimonialModal.classList.add('open');
+        testimonialModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const firstInput = document.getElementById('reviewAuthorName');
+        if (firstInput) setTimeout(() => firstInput.focus(), 150);
+    }
+
+    function closeTestimonialModal() {
+        if (!testimonialModal) return;
+        testimonialModal.classList.remove('open');
+        testimonialModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (feedbackToast) feedbackToast.style.display = 'none';
+    }
+
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', openTestimonialModal);
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeTestimonialModal);
+    }
+
+    if (testimonialModal) {
+        testimonialModal.addEventListener('click', (e) => {
+            if (e.target === testimonialModal) {
+                closeTestimonialModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && testimonialModal.classList.contains('open')) {
+                closeTestimonialModal();
+            }
+        });
+    }
+
+    // Classificação por Estrelas
+    function setRating(rating) {
+        currentRating = rating;
+        starBtns.forEach(btn => {
+            const btnVal = parseInt(btn.getAttribute('data-rating'), 10);
+            if (btnVal <= rating) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        if (ratingLabel) {
+            ratingLabel.textContent = ratingTexts[rating] || `${rating} de 5 estrelas`;
+        }
+    }
+
+    starBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const rating = parseInt(btn.getAttribute('data-rating'), 10) || 5;
+            setRating(rating);
+        });
+
+        // Efeito de hover suave
+        btn.addEventListener('mouseenter', () => {
+            const hoverVal = parseInt(btn.getAttribute('data-rating'), 10) || 5;
+            starBtns.forEach(b => {
+                const val = parseInt(b.getAttribute('data-rating'), 10);
+                if (val <= hoverVal) {
+                    b.style.color = '#D4AF37';
+                } else {
+                    b.style.color = '#DACEC5';
+                }
+            });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            starBtns.forEach(b => {
+                b.style.color = '';
+            });
+        });
+    });
+
+    // Submissão e Formatação para WhatsApp
+    if (testimonialForm) {
+        testimonialForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('reviewAuthorName');
+            const serviceInput = document.getElementById('reviewServiceType');
+            const reviewInput = document.getElementById('reviewText');
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const service = serviceInput ? serviceInput.value.trim() : '';
+            const review = reviewInput ? reviewInput.value.trim() : '';
+
+            if (!name || !service || !review) {
+                if (feedbackToast) {
+                    feedbackToast.className = 'form-feedback-toast error';
+                    feedbackToast.textContent = 'Por favor, preencha todos os campos antes de prosseguir.';
+                    feedbackToast.style.display = 'block';
+                }
+                return;
+            }
+
+            // Gera estrelas em texto (ex: ★★★★★)
+            const starString = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+
+            const whatsappReviewMessage = 
+`✦ *NOVO DEPOIMENTO PARA O SITE — MARLA SAKAMOTO* ✦
+
+*Nome:* ${name}
+*Experiência:* ${service}
+*Classificação:* ${starString} (${currentRating}/5)
+
+*Depoimento:*
+"${review}"
+
+_Enviado através do site oficial Marla Sakamoto._`;
+
+            const encoded = encodeURIComponent(whatsappReviewMessage);
+            const waUrl = `https://wa.me/5519984198840?text=${encoded}`;
+
+            if (feedbackToast) {
+                feedbackToast.className = 'form-feedback-toast success';
+                feedbackToast.textContent = '✓ Depoimento gerado com sucesso! Abrindo o WhatsApp da Marla para confirmação...';
+                feedbackToast.style.display = 'block';
+            }
+
+            // Abre o WhatsApp para envio imediato e direto
+            setTimeout(() => {
+                window.open(waUrl, '_blank', 'noopener,noreferrer');
+            }, 600);
+
+            // Reseta e fecha modal suavemente após 2.4 segundos
+            setTimeout(() => {
+                testimonialForm.reset();
+                setRating(5);
+                closeTestimonialModal();
+            }, 2400);
+        });
+    }
 });
