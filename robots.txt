@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /*.css
+Allow: /*.js
+Allow: /images/
+
+# Bloqueio de pastas e scripts internos/administrativos
+Disallow: /aura/
+Disallow: /api/
+Disallow: /*.log
+Disallow: /send_email.php
+Disallow: /.htaccess*
 
 Sitemap: https://www.marlasakamoto.art.br/sitemap.xml

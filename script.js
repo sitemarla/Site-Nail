@@ -356,4 +356,47 @@ _Enviado através do site oficial Marla Sakamoto._`;
             }, 2400);
         });
     }
+
+    // 7. Carrossel Interativo de Procedimentos Autorais Selecionados
+    const worksTrack = document.getElementById('worksCarouselTrack');
+    const worksPrevBtn = document.getElementById('carouselPrevBtn');
+    const worksNextBtn = document.getElementById('carouselNextBtn');
+    const worksDots = document.querySelectorAll('#carouselDots .carousel-dot');
+
+    if (worksTrack && worksPrevBtn && worksNextBtn) {
+        const getCardStep = () => {
+            const firstCard = worksTrack.querySelector('.works-carousel-card');
+            return firstCard ? firstCard.offsetWidth + 24 : 340;
+        };
+
+        worksPrevBtn.addEventListener('click', () => {
+            worksTrack.scrollBy({ left: -getCardStep(), behavior: 'smooth' });
+        });
+
+        worksNextBtn.addEventListener('click', () => {
+            worksTrack.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+        });
+
+        // Sincroniza as bolinhas indicadoras no scroll
+        worksTrack.addEventListener('scroll', () => {
+            const step = getCardStep();
+            const activeIndex = Math.min(
+                worksDots.length - 1,
+                Math.max(0, Math.round(worksTrack.scrollLeft / step))
+            );
+            worksDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === activeIndex);
+            });
+        }, { passive: true });
+
+        // Clique nas bolinhas para navegar diretamente
+        worksDots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                worksTrack.scrollTo({
+                    left: idx * getCardStep(),
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
 });
