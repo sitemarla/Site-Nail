@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.marlasakamoto.art.br/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/marlasite.jpg</image:loc>
+      <image:title>Marla Sakamoto — Nail Designer e Educadora em Americana SP</image:title>
+      <image:caption>Ateliê de Nail Design e cursos de unhas em Americana, SP</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/marla-sakamoto-logo.jpg</image:loc>
+      <image:title>Logotipo Oficial Marla Sakamoto Nail Designer</image:title>
+      <image:caption>Identidade visual e logotipo de Marla Sakamoto</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/nail-fibra-vidro.jpg</image:loc>
+      <image:title>Alongamento de Unhas em Fibra de Vidro em Americana SP</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/nail-francesa-reversa.jpg</image:loc>
+      <image:title>Alongamento Formato Almond e Francesa Reversa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/nail-babyboomer.jpg</image:loc>
+      <image:title>Alongamento Babyboomer e Banho de Gel Estruturado</image:title>
+    </image:image>
   </url>
 </urlset>

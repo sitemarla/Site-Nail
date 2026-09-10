@@ -667,4 +667,19 @@ _Enviado através do site oficial Marla Sakamoto._`;
 
     // Inicia autoplay em todas as resoluções
     startSliderAutoplay();
+
+    // =========================================================================
+    // 9. Rastreamento de Conversões & Eventos (Google Analytics 4 / Google Ads)
+    // =========================================================================
+    document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+        button.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    event_category: 'Engajamento WhatsApp',
+                    event_label: button.getAttribute('aria-label') || button.textContent.trim(),
+                    value: 1
+                });
+            }
+        });
+    });
 });
