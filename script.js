@@ -399,4 +399,188 @@ _Enviado através do site oficial Marla Sakamoto._`;
             });
         });
     }
+
+    // =========================================================================
+    // 8. Sistema Inteligente de Depoimentos (Truncamento Automático & Modal de Leitura)
+    // =========================================================================
+    const TESTIMONIAL_LIMIT = 300;     // Depoimentos com mais de 300 caracteres ganham prévia
+    const PREVIEW_TARGET = 235;        // Tamanho de referência para busca de fim de palavra
+
+    const readModal = document.getElementById('testimonialReadModal');
+    const closeReadModalBtn = document.getElementById('closeReadModalBtn');
+    const closeReadModalFooterBtn = document.getElementById('closeReadModalFooterBtn');
+    const readModalAuthorName = document.getElementById('readModalAuthorName');
+    const readModalAuthorRole = document.getElementById('readModalAuthorRole');
+    const readModalFullText = document.getElementById('readModalFullText');
+
+    let previousActiveElement = null;
+
+    function openReadModal(authorName, authorRole, fullText) {
+        if (!readModal) return;
+        previousActiveElement = document.activeElement;
+
+        if (readModalAuthorName) readModalAuthorName.textContent = authorName;
+        if (readModalAuthorRole) readModalAuthorRole.textContent = authorRole;
+        if (readModalFullText) readModalFullText.textContent = fullText;
+
+        readModal.classList.add('open');
+        readModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        if (closeReadModalBtn) {
+            setTimeout(() => closeReadModalBtn.focus(), 120);
+        }
+    }
+
+    function closeReadModal() {
+        if (!readModal || !readModal.classList.contains('open')) return;
+        readModal.classList.remove('open');
+        readModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+            previousActiveElement.focus();
+        }
+    }
+
+    if (closeReadModalBtn) closeReadModalBtn.addEventListener('click', closeReadModal);
+    if (closeReadModalFooterBtn) closeReadModalFooterBtn.addEventListener('click', closeReadModal);
+
+    if (readModal) {
+        readModal.addEventListener('click', (e) => {
+            if (e.target === readModal) {
+                closeReadModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && readModal.classList.contains('open')) {
+                closeReadModal();
+            }
+        });
+    }
+
+    // Função de corte inteligente em fronteira de palavra
+    function computeWordBoundaryPreview(fullText, limit = TESTIMONIAL_LIMIT, target = PREVIEW_TARGET) {
+        const trimmed = fullText.trim();
+        if (trimmed.length <= limit) {
+            return { isTruncated: false, preview: trimmed };
+        }
+
+        let slice = trimmed.slice(0, target);
+        const lastSpace = slice.lastIndexOf(' ');
+        if (lastSpace > 150) {
+            slice = slice.slice(0, lastSpace);
+        }
+        slice = slice.replace(/[,.;:!\s]+$/, '');
+        return { isTruncated: true, preview: slice + '...' };
+    }
+
+    // Inicialização dos cards de depoimento
+    const testimonialCards = document.querySelectorAll('#testimonialsGrid .testimonial-luxury-card');
+
+    testimonialCards.forEach(card => {
+        const quoteEl = card.querySelector('.card-quote-text');
+        const authorNameEl = card.querySelector('.card-author-name');
+        const authorRoleEl = card.querySelector('.card-author-role');
+
+        if (!quoteEl) return;
+
+        // Preserva o texto original integral 100% fiel
+        const originalFullText = quoteEl.textContent.trim();
+        card.dataset.fullText = originalFullText;
+
+        const authorName = authorNameEl ? authorNameEl.textContent.trim() : 'Cliente';
+        const authorRole = authorRoleEl ? authorRoleEl.textContent.trim() : 'Cliente Ateliê';
+
+        const { isTruncated, preview } = computeWordBoundaryPreview(originalFullText);
+
+        if (isTruncated) {
+            quoteEl.textContent = preview;
+
+            const readMoreBtn = document.createElement('button');
+            readMoreBtn.type = 'button';
+            readMoreBtn.className = 'btn-read-more';
+            readMoreBtn.setAttribute('aria-label', `Ler depoimento completo de ${authorName}`);
+            readMoreBtn.innerHTML = '<span>Ler depoimento completo &rarr;</span>';
+
+            readMoreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openReadModal(authorName, authorRole, originalFullText);
+            });
+
+            quoteEl.insertAdjacentElement('afterend', readMoreBtn);
+        }
+    });
+
+    // Paginação / "Ver mais depoimentos"
+    const toggleMoreBtn = document.getElementById('toggleMoreTestimonialsBtn');
+    const toggleMoreBtnText = document.getElementById('toggleMoreBtnText');
+    const moreCountBadge = document.getElementById('moreCountBadge');
+    const moreWrap = document.getElementById('testimonialsMoreWrap');
+
+    if (testimonialCards.length > 0 && toggleMoreBtn && moreWrap) {
+        const getInitialLimit = () => (window.innerWidth <= 768 ? 3 : 6);
+        let initialLimit = getInitialLimit();
+        let isExpanded = false;
+
+        const applyPagination = () => {
+            if (isExpanded) {
+                testimonialCards.forEach(card => {
+                    card.classList.remove('card-hidden');
+                    card.classList.add('card-revealed');
+                });
+                if (toggleMoreBtnText) toggleMoreBtnText.textContent = 'Ver menos depoimentos ↑';
+                if (moreCountBadge) moreCountBadge.style.display = 'none';
+                toggleMoreBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                initialLimit = getInitialLimit();
+                let hiddenCount = 0;
+
+                testimonialCards.forEach((card, idx) => {
+                    if (idx < initialLimit) {
+                        card.classList.remove('card-hidden');
+                    } else {
+                        card.classList.add('card-hidden');
+                        card.classList.remove('card-revealed');
+                        hiddenCount++;
+                    }
+                });
+
+                if (hiddenCount > 0) {
+                    moreWrap.style.display = 'block';
+                    if (toggleMoreBtnText) toggleMoreBtnText.textContent = 'Ver mais depoimentos';
+                    if (moreCountBadge) {
+                        moreCountBadge.textContent = `+${hiddenCount}`;
+                        moreCountBadge.style.display = 'inline-block';
+                    }
+                    toggleMoreBtn.setAttribute('aria-expanded', 'false');
+                } else {
+                    moreWrap.style.display = 'none';
+                }
+            }
+        };
+
+        applyPagination();
+
+        toggleMoreBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            applyPagination();
+
+            if (!isExpanded) {
+                const depSection = document.getElementById('depoimentos');
+                if (depSection) {
+                    depSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (!isExpanded) applyPagination();
+            }, 150);
+        });
+    }
 });

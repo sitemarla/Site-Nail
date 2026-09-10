@@ -2035,12 +2035,12 @@ a {
     color: #FFFFFF;
 }
 
-/* Grid de Depoimentos */
+/* Grid de Depoimentos (3 colunas no desktop) */
 .testimonials-luxury-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
-    max-width: 1060px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
@@ -2048,13 +2048,33 @@ a {
     background: #FFFFFF;
     border: 1px solid rgba(226, 215, 210, 0.85);
     border-radius: 20px;
-    padding: 30px 26px 26px;
+    padding: 26px 24px 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 10px 30px -8px rgba(28, 20, 18, 0.05);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 24px -6px rgba(28, 20, 18, 0.05);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     position: relative;
+    min-height: 270px;
+}
+
+.testimonial-luxury-card.card-hidden {
+    display: none !important;
+}
+
+.testimonial-luxury-card.card-revealed {
+    animation: fadeInCard 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .testimonial-luxury-card:hover {
@@ -2073,12 +2093,12 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .card-stars {
     color: #D4AF37;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 2px;
 }
 
@@ -2105,29 +2125,55 @@ a {
 
 .card-quote-text {
     font-family: var(--font-sans);
-    font-size: 0.94rem;
-    line-height: 1.7;
+    font-size: 0.92rem;
+    line-height: 1.68;
     color: var(--text-body);
     font-style: italic;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
     flex: 1;
+}
+
+/* Botão Ler Depoimento Completo */
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: -6px;
+    margin-bottom: 18px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-bronze);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    align-self: flex-start;
+}
+
+.btn-read-more:hover {
+    color: var(--text-dark);
+    transform: translateX(3px);
 }
 
 .card-author-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding-top: 18px;
+    padding-top: 16px;
     border-top: 1px solid rgba(226, 215, 210, 0.65);
 }
 
 .card-author-avatar {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: linear-gradient(135deg, #F6F1EC, #EADFD7);
     color: var(--accent-terracotta);
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -2143,7 +2189,7 @@ a {
 
 .card-author-name {
     font-family: var(--font-sans);
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: var(--text-dark);
 }
@@ -2152,6 +2198,192 @@ a {
     font-size: 0.74rem;
     color: var(--text-muted);
     margin-top: 2px;
+}
+
+/* Ação de Paginação / Ver Mais Depoimentos */
+.testimonials-actions {
+    margin-top: 36px;
+}
+
+.btn-show-more-testimonials {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border);
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--text-editorial);
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(28, 20, 18, 0.04);
+    transition: var(--transition);
+}
+
+.btn-show-more-testimonials:hover {
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    background: var(--bg-nude-warm);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(28, 20, 18, 0.08);
+}
+
+.btn-show-more-testimonials .more-count {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--accent-bronze);
+    background: var(--bg-nude-warm);
+    padding: 2px 8px;
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.btn-show-more-testimonials:hover .more-count {
+    background: #FFFFFF;
+}
+
+/* ==========================================================================
+   MODAL DE LEITURA DE DEPOIMENTO COMPLETO (Warm Modern Luxury)
+   ========================================================================== */
+.testimonial-read-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(20, 16, 14, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-read-modal-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.testimonial-read-modal-container {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    max-width: 580px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 28px 65px -12px rgba(20, 16, 14, 0.28);
+    transform: translateY(22px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-read-modal-backdrop.open .testimonial-read-modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.read-modal-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bg-nude-warm);
+    border: 1px solid var(--border);
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.read-modal-close-btn:hover {
+    background: #FFFFFF;
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    transform: scale(1.08);
+}
+
+.read-modal-head {
+    padding: 26px 28px 18px;
+    border-bottom: 1px solid rgba(226, 215, 210, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.read-modal-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.read-modal-author-name {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.read-modal-author-role {
+    font-size: 0.78rem;
+    color: var(--accent-bronze);
+    font-weight: 600;
+}
+
+.read-modal-body {
+    padding: 24px 28px;
+    overflow-y: auto;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.read-modal-quote {
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--text-editorial);
+    white-space: pre-line;
+    margin: 0;
+}
+
+.read-modal-footer {
+    padding: 16px 28px 22px;
+    border-top: 1px solid rgba(226, 215, 210, 0.6);
+    display: flex;
+    justify-content: flex-end;
+    background: #FAF8F5;
+}
+
+.btn-close-read-modal {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    padding: 9px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-close-read-modal:hover {
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    background: var(--bg-nude-warm);
+    transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -2841,9 +3073,10 @@ a {
     }
 
     .testimonials-luxury-grid {
-        grid-template-columns: 1fr;
-        max-width: 520px;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 780px;
         margin: 0 auto;
+        gap: 20px;
     }
 
     .testimonial-invite-banner {
@@ -3023,6 +3256,34 @@ a {
     .testimonial-modal-container {
         padding: 26px 18px;
         border-radius: 20px;
+    }
+
+    .testimonials-luxury-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+        gap: 18px;
+    }
+
+    .testimonial-read-modal-backdrop {
+        padding: 14px;
+    }
+
+    .testimonial-read-modal-container {
+        border-radius: 20px;
+        max-height: 90vh;
+    }
+
+    .read-modal-head {
+        padding: 22px 20px 14px;
+    }
+
+    .read-modal-body {
+        padding: 18px 20px;
+    }
+
+    .read-modal-footer {
+        padding: 14px 20px 18px;
     }
 }
 
