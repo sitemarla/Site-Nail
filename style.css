@@ -400,6 +400,7 @@ a {
     justify-content: flex-end;
     gap: 10px;
     flex-shrink: 0;
+    line-height: 0;
 }
 
 .btn-header-insta {
@@ -2783,7 +2784,9 @@ a {
 @media (max-width: 1080px) {
     .header-inner {
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 12px;
     }
 
     .header-nav {
@@ -2792,6 +2795,11 @@ a {
 
     .mobile-burger {
         display: flex;
+    }
+
+    .header-right {
+        align-items: center;
+        flex-shrink: 0;
     }
 }
 
