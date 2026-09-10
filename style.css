@@ -2244,6 +2244,61 @@ a {
     background: #FFFFFF;
 }
 
+/* Controles do Carrossel / Slider (Mobile) */
+.testimonials-slider-controls {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.slider-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(212, 175, 138, 0.45);
+    color: var(--text-editorial);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(28, 20, 18, 0.06);
+    transition: var(--transition);
+}
+
+.slider-nav-btn:hover,
+.slider-nav-btn:active {
+    background: var(--bg-nude-warm);
+    border-color: var(--accent-bronze);
+    color: var(--accent-bronze);
+    transform: scale(1.06);
+}
+
+.slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(212, 175, 138, 0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-dot.active {
+    width: 26px;
+    background: linear-gradient(135deg, var(--accent-bronze), var(--accent-terracotta));
+    box-shadow: 0 2px 8px rgba(184, 138, 90, 0.35);
+}
+
 /* ==========================================================================
    MODAL DE LEITURA DE DEPOIMENTO COMPLETO (Warm Modern Luxury)
    ========================================================================== */
@@ -3259,10 +3314,42 @@ a {
     }
 
     .testimonials-luxury-grid {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-        margin: 0 auto;
-        gap: 18px;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 16px !important;
+        max-width: 100% !important;
+        padding: 6px 2px 14px !important;
+        scroll-behavior: smooth;
+    }
+
+    .testimonials-luxury-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonial-luxury-card {
+        flex: 0 0 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: center !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    .testimonial-luxury-card.card-hidden {
+        display: flex !important;
+    }
+
+    .testimonials-slider-controls {
+        display: flex !important;
+    }
+
+    .testimonials-actions {
+        display: none !important;
     }
 
     .testimonial-read-modal-backdrop {
