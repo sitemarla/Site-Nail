@@ -128,30 +128,31 @@ a {
     z-index: 100;
     background: #FFFFFF;
     border-bottom: 1px solid var(--border-subtle);
-    padding: 16px 0;
+    padding: 10px 0;
     transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease, padding 0.3s ease;
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 4px 24px -2px rgba(28, 23, 23, 0.04);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px -2px rgba(28, 23, 23, 0.05);
     border-bottom-color: rgba(232, 223, 213, 0.85);
-    padding: 12px 0;
+    padding: 8px 0;
 }
 
 .header .container {
-    max-width: 1360px;
-    padding-left: clamp(20px, 3.5vw, 40px);
-    padding-right: clamp(20px, 3.5vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: clamp(20px, 4vw, 40px);
+    padding-right: clamp(20px, 4vw, 40px);
 }
 
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     width: 100%;
 }
 
@@ -159,20 +160,20 @@ a {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
     flex-shrink: 0;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .brand-logo-img {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     border-radius: 8px;
     object-fit: contain;
-    border: 1px solid rgba(212, 175, 138, 0.4);
+    border: 1px solid rgba(212, 175, 138, 0.45);
     background: #FAF6F2;
-    box-shadow: 0 2px 8px rgba(28, 20, 18, 0.06);
+    box-shadow: 0 2px 6px rgba(28, 20, 18, 0.05);
     flex-shrink: 0;
 }
 
@@ -182,15 +183,15 @@ a {
 }
 
 .brand:hover {
-    opacity: 0.9;
+    opacity: 0.92;
     transform: translateY(-1px);
 }
 
 .logo {
     font-family: var(--font-sans);
-    font-size: 1.15rem;
+    font-size: 1.02rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     color: var(--text-primary);
     line-height: 1.1;
     text-transform: uppercase;
@@ -199,30 +200,31 @@ a {
 
 .logo-sub {
     font-family: var(--font-sans);
-    font-size: 0.52rem;
+    font-size: 0.48rem;
     font-weight: 600;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.20em;
     color: var(--accent-bronze);
     line-height: 1;
     text-transform: uppercase;
-    margin-top: 5px;
+    margin-top: 3px;
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
 }
 
-/* Navegação Desktop Minimalista e Acolhedora */
+/* Navegação Desktop Compacta, Moderna & Elegante */
 .header-nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .nav-list {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -230,21 +232,23 @@ a {
 
 .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.81rem;
     font-weight: 500;
     color: var(--text-body);
     text-decoration: none;
-    padding: 8px 14px;
+    padding: 6px 11px;
     border-radius: 999px;
     transition: var(--transition);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.015em;
     white-space: nowrap;
     position: relative;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--text-primary);
     background: var(--bg-nude-warm);
+    font-weight: 600;
 }
 
 /* Botão Hamburger Mobile */
@@ -432,18 +436,19 @@ a {
 .btn-header-insta {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    background: transparent;
+    gap: 6px;
+    background: #FFFFFF;
     border: 1px solid var(--border-subtle);
-    padding: 8px 16px;
+    padding: 6px 13px;
     border-radius: 999px;
-    font-size: 0.78rem;
+    font-size: 0.77rem;
     font-weight: 600;
-    color: var(--text-body);
+    color: var(--text-editorial);
     transition: var(--transition);
     white-space: nowrap;
     flex-shrink: 0;
     text-decoration: none;
+    box-shadow: 0 1px 4px rgba(28, 20, 18, 0.03);
 }
 
 .btn-header-insta .insta-svg-icon {
