@@ -141,11 +141,18 @@ a {
     padding: 12px 0;
 }
 
+.header .container {
+    max-width: 1360px;
+    padding-left: clamp(20px, 3.5vw, 40px);
+    padding-right: clamp(20px, 3.5vw, 40px);
+}
+
 .header-inner {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
-    gap: 32px;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
 .brand {
@@ -398,9 +405,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 12px;
     flex-shrink: 0;
-    line-height: 0;
+    margin-left: auto;
 }
 
 .btn-header-insta {
@@ -440,20 +447,23 @@ a {
 .btn-header-wa {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 9px;
     background: var(--cta-emerald);
     color: #FFFFFF !important;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 9px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 10px 22px;
+    min-height: 42px;
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    box-shadow: 0 4px 14px rgba(27, 138, 90, 0.25);
+    box-shadow: 0 4px 16px rgba(27, 138, 90, 0.28);
     transition: var(--transition);
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .btn-wa-text-full {
@@ -466,8 +476,8 @@ a {
 
 .btn-header-wa:hover {
     background: var(--cta-emerald-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(27, 138, 90, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(27, 138, 90, 0.38);
     color: #FFFFFF !important;
 }
 
@@ -2781,7 +2791,26 @@ a {
 }
 
 /* 8. RESPONSIVIDADE PRECISA (MOBILE FIRST) */
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
+    .header .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .btn-header-insta span {
+        display: none;
+    }
+
+    .btn-header-insta {
+        padding: 9px 12px;
+    }
+
+    .header-inner {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 1140px) {
     .header-inner {
         display: flex;
         align-items: center;
@@ -2800,6 +2829,7 @@ a {
     .header-right {
         align-items: center;
         flex-shrink: 0;
+        margin-left: auto;
     }
 }
 
@@ -2947,8 +2977,9 @@ a {
     }
 
     .btn-header-wa {
-        padding: 7px 12px;
-        font-size: 0.74rem;
+        padding: 8px 14px;
+        min-height: 38px;
+        font-size: 0.76rem;
         gap: 6px;
         white-space: nowrap;
         flex-shrink: 0;
