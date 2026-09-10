@@ -444,57 +444,7 @@ a {
     color: var(--accent-rose);
 }
 
-.btn-header-wa {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    background: var(--cta-emerald);
-    color: #FFFFFF !important;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    padding: 10px 22px;
-    min-height: 42px;
-    border-radius: 999px;
-    font-size: 0.84rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    box-shadow: 0 4px 16px rgba(27, 138, 90, 0.28);
-    transition: var(--transition);
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-    cursor: pointer;
-}
 
-.btn-wa-text-full {
-    display: inline;
-}
-
-.btn-wa-text-compact {
-    display: none;
-}
-
-.btn-header-wa:hover {
-    background: var(--cta-emerald-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(27, 138, 90, 0.38);
-    color: #FFFFFF !important;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 0 6px #FFFFFF;
-    animation: statusPulse 2s infinite;
-}
-
-@keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); }
-    70% { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-}
 
 /* ==========================================================================
    3. HERO BANNER QUASE TELA TODA (WARM MODERN LUXURY)
@@ -2791,26 +2741,7 @@ a {
 }
 
 /* 8. RESPONSIVIDADE PRECISA (MOBILE FIRST) */
-@media (max-width: 1280px) {
-    .header .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .btn-header-insta span {
-        display: none;
-    }
-
-    .btn-header-insta {
-        padding: 9px 12px;
-    }
-
-    .header-inner {
-        gap: 16px;
-    }
-}
-
-@media (max-width: 1140px) {
+@media (max-width: 1080px) {
     .header-inner {
         display: flex;
         align-items: center;
@@ -2976,22 +2907,7 @@ a {
         display: none;
     }
 
-    .btn-header-wa {
-        padding: 8px 14px;
-        min-height: 38px;
-        font-size: 0.76rem;
-        gap: 6px;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
 
-    .btn-wa-text-full {
-        display: none;
-    }
-
-    .btn-wa-text-compact {
-        display: inline;
-    }
 
     .mobile-burger {
         width: 36px;
@@ -3129,16 +3045,7 @@ a {
         gap: 6px;
     }
 
-    .btn-header-wa {
-        padding: 6px 10px;
-        font-size: 0.72rem;
-        gap: 5px;
-    }
 
-    .status-dot {
-        width: 6px;
-        height: 6px;
-    }
 
     .mobile-burger {
         width: 34px;
@@ -3181,11 +3088,7 @@ a {
         letter-spacing: 0.05em;
     }
 
-    .btn-header-wa {
-        padding: 5px 8px;
-        font-size: 0.68rem;
-        gap: 4px;
-    }
+
 
     .mobile-burger {
         width: 32px;
