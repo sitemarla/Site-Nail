@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.marlasakamoto.art.br/</loc>
     <lastmod>2026-09-10</lastmod>
@@ -27,6 +28,26 @@
     <image:image>
       <image:loc>https://www.marlasakamoto.art.br/images/nail-babyboomer.jpg</image:loc>
       <image:title>Alongamento Babyboomer e Banho de Gel Estruturado</image:title>
+    </image:image>
+  </url>
+
+  <!-- Central do Blog -->
+  <url>
+    <loc>https://www.marlasakamoto.art.br/blog/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigo: Alongamento de Unhas Estraga a Unha Natural -->
+  <url>
+    <loc>https://www.marlasakamoto.art.br/blog/alongamento-de-unhas-estraga-a-unha-natural.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.marlasakamoto.art.br/images/nail-fibra-vidro.jpg</image:loc>
+      <image:title>Alongamento de Unha Estraga a Unha Natural? - Marla Sakamoto</image:title>
     </image:image>
   </url>
 </urlset>
