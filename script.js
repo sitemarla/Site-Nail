@@ -584,25 +584,36 @@ _Enviado através do site oficial Marla Sakamoto._`;
         }
     }
 
-    // Detecta scroll manual pelo usuário no mobile e sincroniza o dot
-    if (testimonialsGrid) {
+    // Detecta scroll manual pelo usuário (desktop ou mobile) e sincroniza o dot ativo
+    if (testimonialsGrid && totalCards > 0) {
         let isScrollingTimeout;
         testimonialsGrid.addEventListener('scroll', () => {
             clearTimeout(isScrollingTimeout);
             isScrollingTimeout = setTimeout(() => {
-                if (window.innerWidth <= 768 && testimonialsGrid.offsetWidth > 0) {
-                    const scrollLeft = testimonialsGrid.scrollLeft;
-                    const cardWidth = testimonialsGrid.offsetWidth;
-                    const calculatedIndex = Math.round(scrollLeft / cardWidth);
-                    if (calculatedIndex >= 0 && calculatedIndex < totalCards && calculatedIndex !== currentSliderIndex) {
-                        currentSliderIndex = calculatedIndex;
-                        updateActiveDot(currentSliderIndex);
+                const currentScroll = testimonialsGrid.scrollLeft;
+                const gridOffset = testimonialsGrid.offsetLeft;
+                let closestIndex = 0;
+                let minDistance = Infinity;
+
+                testimonialCards.forEach((card, idx) => {
+                    const cardPos = card.offsetLeft - gridOffset;
+                    const distance = Math.abs(cardPos - currentScroll);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = idx;
                     }
+                });
+
+                if (closestIndex !== currentSliderIndex) {
+                    currentSliderIndex = closestIndex;
+                    updateActiveDot(currentSliderIndex);
                 }
             }, 60);
         }, { passive: true });
 
-        // Pausa autoplay quando o usuário toca/arrasta no slider
+        // Pausa autoplay quando o usuário interage (mouse hover no PC ou toque no mobile)
+        testimonialsGrid.addEventListener('mouseenter', () => stopSliderAutoplay());
+        testimonialsGrid.addEventListener('mouseleave', () => pauseSliderTemporarily(3500));
         testimonialsGrid.addEventListener('touchstart', () => pauseSliderTemporarily(8000), { passive: true });
         testimonialsGrid.addEventListener('pointerdown', () => pauseSliderTemporarily(8000), { passive: true });
     }
@@ -625,15 +636,18 @@ _Enviado através do site oficial Marla Sakamoto._`;
     // Funções de controle do Autoplay
     function startSliderAutoplay() {
         stopSliderAutoplay();
-        // Ativa autoplay apenas no mobile e quando modais não estão abertos
-        if (window.innerWidth > 768) return;
+        // Pausa se algum modal estiver aberto
         if (readModal && readModal.classList.contains('open')) return;
+        const submitModal = document.getElementById('testimonialModal');
+        if (submitModal && submitModal.classList.contains('open')) return;
 
         sliderAutoplayInterval = setInterval(() => {
-            if (window.innerWidth <= 768 && (!readModal || !readModal.classList.contains('open'))) {
+            const isReadOpen = readModal && readModal.classList.contains('open');
+            const isSubmitOpen = submitModal && submitModal.classList.contains('open');
+            if (!isReadOpen && !isSubmitOpen) {
                 scrollToTestimonialIndex(currentSliderIndex + 1);
             }
-        }, 4500); // 4.5 segundos por depoimento
+        }, 4500); // 4.5 segundos
     }
 
     function stopSliderAutoplay() {
@@ -651,101 +665,6 @@ _Enviado através do site oficial Marla Sakamoto._`;
         }, ms);
     }
 
-    // Inicia autoplay se for dispositivo mobile
-    if (window.innerWidth <= 768) {
-        startSliderAutoplay();
-    }
-
-    // =========================================================================
-    // Paginação no Desktop / "Ver mais depoimentos"
-    // =========================================================================
-    const toggleMoreBtn = document.getElementById('toggleMoreTestimonialsBtn');
-    const toggleMoreBtnText = document.getElementById('toggleMoreBtnText');
-    const moreCountBadge = document.getElementById('moreCountBadge');
-    const moreWrap = document.getElementById('testimonialsMoreWrap');
-
-    if (testimonialCards.length > 0 && toggleMoreBtn && moreWrap) {
-        const getInitialLimit = () => 6;
-        let initialLimit = getInitialLimit();
-        let isExpanded = false;
-
-        const applyPagination = () => {
-            const isMobile = window.innerWidth <= 768;
-
-            if (isMobile) {
-                // No mobile, todos os cards ficam visíveis no slider
-                testimonialCards.forEach(card => {
-                    card.classList.remove('card-hidden');
-                });
-                moreWrap.style.display = 'none';
-                startSliderAutoplay();
-                return;
-            }
-
-            // No desktop
-            stopSliderAutoplay();
-
-            if (isExpanded) {
-                testimonialCards.forEach(card => {
-                    card.classList.remove('card-hidden');
-                    card.classList.add('card-revealed');
-                });
-                if (toggleMoreBtnText) toggleMoreBtnText.textContent = 'Ver menos depoimentos ↑';
-                if (moreCountBadge) moreCountBadge.style.display = 'none';
-                toggleMoreBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                initialLimit = getInitialLimit();
-                let hiddenCount = 0;
-
-                testimonialCards.forEach((card, idx) => {
-                    if (idx < initialLimit) {
-                        card.classList.remove('card-hidden');
-                    } else {
-                        card.classList.add('card-hidden');
-                        card.classList.remove('card-revealed');
-                        hiddenCount++;
-                    }
-                });
-
-                if (hiddenCount > 0) {
-                    moreWrap.style.display = 'block';
-                    if (toggleMoreBtnText) toggleMoreBtnText.textContent = 'Ver mais depoimentos';
-                    if (moreCountBadge) {
-                        moreCountBadge.textContent = `+${hiddenCount}`;
-                        moreCountBadge.style.display = 'inline-block';
-                    }
-                    toggleMoreBtn.setAttribute('aria-expanded', 'false');
-                } else {
-                    moreWrap.style.display = 'none';
-                }
-            }
-        };
-
-        applyPagination();
-
-        toggleMoreBtn.addEventListener('click', () => {
-            isExpanded = !isExpanded;
-            applyPagination();
-
-            if (!isExpanded) {
-                const depSection = document.getElementById('depoimentos');
-                if (depSection) {
-                    depSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
-        });
-
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                applyPagination();
-                if (window.innerWidth <= 768) {
-                    startSliderAutoplay();
-                } else {
-                    stopSliderAutoplay();
-                }
-            }, 150);
-        });
-    }
+    // Inicia autoplay em todas as resoluções
+    startSliderAutoplay();
 });
