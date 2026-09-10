@@ -2400,6 +2400,8 @@ a {
         width: 100%;
         justify-content: center;
     }
+}
+
 /* Rodapé com Logotipo Oficial */
 .footer-left {
     display: flex;
