@@ -167,13 +167,18 @@ a {
 }
 
 .brand-logo-img {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
     object-fit: contain;
-    border: 1px solid rgba(212, 175, 138, 0.45);
-    background: #FAF6F2;
-    box-shadow: 0 2px 6px rgba(28, 20, 18, 0.05);
+    border: 1.5px solid rgba(212, 175, 138, 0.65);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(180, 130, 90, 0.5);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF6F2 100%);
+    box-shadow: 
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 1.5px 0 rgba(143, 91, 78, 0.1),
+        0 3px 10px rgba(28, 20, 18, 0.07);
     flex-shrink: 0;
 }
 
@@ -183,7 +188,7 @@ a {
 }
 
 .brand:hover {
-    opacity: 0.92;
+    opacity: 0.95;
     transform: translateY(-1px);
 }
 
@@ -213,7 +218,7 @@ a {
     gap: 4px;
 }
 
-/* Navegação Desktop Compacta, Moderna & Elegante */
+/* Navegação Desktop: Trilho Flutuante Bevel & Emboss 3D Tátil & Colorido */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -224,34 +229,79 @@ a {
 .nav-list {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
+    gap: 4px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 4px 6px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 242, 237, 0.92) 100%);
+    border: 1px solid rgba(216, 196, 175, 0.55);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(200, 180, 160, 0.45);
+    box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1.5px 2px 0 rgba(143, 91, 78, 0.08),
+        0 6px 20px -3px rgba(28, 23, 23, 0.08),
+        0 2px 6px 0 rgba(28, 23, 23, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-link {
     font-family: var(--font-sans);
     font-size: 0.81rem;
-    font-weight: 500;
-    color: var(--text-body);
+    font-weight: 600;
+    color: var(--text-editorial);
     text-decoration: none;
-    padding: 6px 11px;
+    padding: 7px 13px;
     border-radius: 999px;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     letter-spacing: 0.015em;
     white-space: nowrap;
     position: relative;
+    border: 1px solid transparent;
 }
 
-.nav-link:hover,
+/* Hover: Gradiente Colorido Vibrante (Rosé Gold a Terracota) com Relevo 3D Bevel & Emboss */
+.nav-link:hover {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #B87565 0%, #D8A494 50%, #8F5B4E 100%);
+    border-color: rgba(255, 255, 255, 0.65);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(100, 40, 25, 0.3);
+    box-shadow: 
+        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.75),
+        inset 0 -1.5px 2px 0 rgba(80, 25, 15, 0.25),
+        0 4px 14px 0 rgba(184, 117, 101, 0.38),
+        0 2px 4px 0 rgba(28, 23, 23, 0.1);
+    transform: translateY(-1.5px);
+    text-shadow: 0 1px 2px rgba(40, 15, 10, 0.35);
+}
+
+/* Item Ativo: Gradiente Nobre Intenso com Relevo Marcante */
 .nav-link.active {
-    color: var(--text-primary);
-    background: var(--bg-nude-warm);
-    font-weight: 600;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #8F5B4E 0%, #B87565 50%, #C9A98A 100%);
+    border-color: rgba(255, 255, 255, 0.75);
+    border-top-color: rgba(255, 255, 255, 1);
+    border-bottom-color: rgba(60, 20, 10, 0.4);
+    box-shadow: 
+        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -1.5px 2.5px 0 rgba(50, 15, 10, 0.3),
+        0 5px 16px 0 rgba(143, 91, 78, 0.45);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(30, 10, 5, 0.4);
 }
 
-/* Botão Hamburger Mobile */
+/* Clique (Active Press): Sensação Tátil Real de Pressionar o Botão */
+.nav-link:active {
+    transform: translateY(1px);
+    box-shadow: 
+        inset 0 2px 4px 0 rgba(0, 0, 0, 0.25),
+        0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Hamburger Mobile 3D Tátil */
 .mobile-burger {
     display: none;
     flex-direction: column;
@@ -260,12 +310,18 @@ a {
     gap: 5px;
     width: 40px;
     height: 40px;
-    background: #FFFFFF;
-    border: 1.5px solid var(--border);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF6F2 100%);
+    border: 1.5px solid rgba(216, 196, 175, 0.6);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(180, 150, 130, 0.4);
     border-radius: 10px;
     cursor: pointer;
     padding: 0;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 1.5px 0 rgba(143, 91, 78, 0.08),
+        0 3px 10px rgba(28, 20, 18, 0.06);
 }
 
 .mobile-burger:hover {
@@ -433,39 +489,55 @@ a {
     margin-left: auto;
 }
 
+/* Botão Instagram 3D Tátil com Gradiente Vibrante Luxo & Bevel Emboss */
 .btn-header-insta {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: #FFFFFF;
-    border: 1px solid var(--border-subtle);
-    padding: 6px 13px;
+    gap: 7px;
+    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(120, 20, 40, 0.4);
+    padding: 7px 15px;
     border-radius: 999px;
-    font-size: 0.77rem;
-    font-weight: 600;
-    color: var(--text-editorial);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #FFFFFF;
     transition: var(--transition);
     white-space: nowrap;
     flex-shrink: 0;
     text-decoration: none;
-    box-shadow: 0 1px 4px rgba(28, 20, 18, 0.03);
+    box-shadow: 
+        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1.5px 2px 0 rgba(80, 10, 30, 0.3),
+        0 4px 16px 0 rgba(225, 48, 108, 0.35);
+    text-shadow: 0 1px 2px rgba(40, 10, 20, 0.35);
 }
 
 .btn-header-insta .insta-svg-icon {
-    color: var(--accent-bronze);
-    transition: transform 0.25s ease;
+    color: #FFFFFF;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-header-insta:hover {
-    border-color: var(--accent-bronze);
-    color: var(--accent-bronze);
-    background: var(--bg-nude-warm);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #833AB4 0%, #E1306C 40%, #FD1D1D 70%, #F77737 100%);
+    transform: translateY(-1.5px) scale(1.03);
+    box-shadow: 
+        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1.5px 2px 0 rgba(80, 10, 30, 0.35),
+        0 6px 22px 0 rgba(225, 48, 108, 0.5);
 }
 
 .btn-header-insta:hover .insta-svg-icon {
-    transform: scale(1.15) rotate(-5deg);
-    color: var(--accent-rose);
+    transform: scale(1.2) rotate(-8deg);
+}
+
+.btn-header-insta:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+        inset 0 2.5px 4px 0 rgba(0, 0, 0, 0.3),
+        0 2px 6px 0 rgba(225, 48, 108, 0.2);
 }
 
 
