@@ -218,7 +218,7 @@ a {
     gap: 4px;
 }
 
-/* Navegação Desktop: Trilho Flutuante Bevel & Emboss 3D Tátil & Colorido */
+/* Navegação Desktop: Warm Luxury Satin Pill Track (Minimalista, Moderno & Ultra Premium) */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -229,76 +229,48 @@ a {
 .nav-list {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     list-style: none;
     margin: 0;
     padding: 4px 6px;
     border-radius: 999px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 242, 237, 0.92) 100%);
-    border: 1px solid rgba(216, 196, 175, 0.55);
-    border-top-color: rgba(255, 255, 255, 0.95);
-    border-bottom-color: rgba(200, 180, 160, 0.45);
-    box-shadow: 
-        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
-        inset 0 -1.5px 2px 0 rgba(143, 91, 78, 0.08),
-        0 6px 20px -3px rgba(28, 23, 23, 0.08),
-        0 2px 6px 0 rgba(28, 23, 23, 0.03);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px -4px rgba(28, 23, 23, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .nav-link {
     font-family: var(--font-sans);
     font-size: 0.81rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-editorial);
     text-decoration: none;
-    padding: 7px 13px;
+    padding: 6px 13px;
     border-radius: 999px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    letter-spacing: 0.015em;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.02em;
     white-space: nowrap;
     position: relative;
     border: 1px solid transparent;
 }
 
-/* Hover: Gradiente Colorido Vibrante (Rosé Gold a Terracota) com Relevo 3D Bevel & Emboss */
+/* Hover: Cápsula Nude Acolhedora com Acento Bronze Sutil */
 .nav-link:hover {
-    color: #FFFFFF;
-    background: linear-gradient(135deg, #B87565 0%, #D8A494 50%, #8F5B4E 100%);
-    border-color: rgba(255, 255, 255, 0.65);
-    border-top-color: rgba(255, 255, 255, 0.95);
-    border-bottom-color: rgba(100, 40, 25, 0.3);
-    box-shadow: 
-        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.75),
-        inset 0 -1.5px 2px 0 rgba(80, 25, 15, 0.25),
-        0 4px 14px 0 rgba(184, 117, 101, 0.38),
-        0 2px 4px 0 rgba(28, 23, 23, 0.1);
-    transform: translateY(-1.5px);
-    text-shadow: 0 1px 2px rgba(40, 15, 10, 0.35);
+    color: var(--text-primary);
+    background: var(--bg-nude-warm);
+    border-color: rgba(201, 169, 138, 0.35);
+    transform: translateY(-1px);
 }
 
-/* Item Ativo: Gradiente Nobre Intenso com Relevo Marcante */
+/* Item Ativo: Cápsula Nobre Dark Editorial */
 .nav-link.active {
     color: #FFFFFF;
-    background: linear-gradient(135deg, #8F5B4E 0%, #B87565 50%, #C9A98A 100%);
-    border-color: rgba(255, 255, 255, 0.75);
-    border-top-color: rgba(255, 255, 255, 1);
-    border-bottom-color: rgba(60, 20, 10, 0.4);
-    box-shadow: 
-        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
-        inset 0 -1.5px 2.5px 0 rgba(50, 15, 10, 0.3),
-        0 5px 16px 0 rgba(143, 91, 78, 0.45);
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(30, 10, 5, 0.4);
-}
-
-/* Clique (Active Press): Sensação Tátil Real de Pressionar o Botão */
-.nav-link:active {
-    transform: translateY(1px);
-    box-shadow: 
-        inset 0 2px 4px 0 rgba(0, 0, 0, 0.25),
-        0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(28, 23, 23, 0.15);
 }
 
 /* Botão Hamburger Mobile 3D Tátil */
@@ -489,55 +461,50 @@ a {
     margin-left: auto;
 }
 
-/* Botão Instagram 3D Tátil com Gradiente Vibrante Luxo & Bevel Emboss */
+/* Botão Instagram Ultra-Premium Warm Luxury */
 .btn-header-insta {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-top-color: rgba(255, 255, 255, 0.95);
-    border-bottom-color: rgba(120, 20, 40, 0.4);
-    padding: 7px 15px;
+    background: linear-gradient(135deg, #FAF6F2 0%, #F4EFEB 100%);
+    border: 1px solid var(--accent-champagne);
+    padding: 7px 16px;
     border-radius: 999px;
     font-size: 0.78rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    transition: var(--transition);
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
     flex-shrink: 0;
     text-decoration: none;
     box-shadow: 
-        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.7),
-        inset 0 -1.5px 2px 0 rgba(80, 10, 30, 0.3),
-        0 4px 16px 0 rgba(225, 48, 108, 0.35);
-    text-shadow: 0 1px 2px rgba(40, 10, 20, 0.35);
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 2px 8px rgba(28, 23, 23, 0.04);
 }
 
 .btn-header-insta .insta-svg-icon {
-    color: #FFFFFF;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--accent-rose);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
 }
 
 .btn-header-insta:hover {
-    background: linear-gradient(135deg, #833AB4 0%, #E1306C 40%, #FD1D1D 70%, #F77737 100%);
-    transform: translateY(-1.5px) scale(1.03);
+    background: linear-gradient(135deg, #8F5B4E 0%, #B87565 100%);
+    color: #FFFFFF;
+    border-color: #8F5B4E;
+    transform: translateY(-1.5px);
     box-shadow: 
-        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.9),
-        inset 0 -1.5px 2px 0 rgba(80, 10, 30, 0.35),
-        0 6px 22px 0 rgba(225, 48, 108, 0.5);
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 6px 18px rgba(143, 91, 78, 0.28);
 }
 
 .btn-header-insta:hover .insta-svg-icon {
-    transform: scale(1.2) rotate(-8deg);
+    transform: scale(1.15) rotate(-6deg);
+    color: #FFFFFF;
 }
 
 .btn-header-insta:active {
-    transform: translateY(1px) scale(0.98);
-    box-shadow: 
-        inset 0 2.5px 4px 0 rgba(0, 0, 0, 0.3),
-        0 2px 6px 0 rgba(225, 48, 108, 0.2);
+    transform: translateY(0.5px);
+    box-shadow: 0 2px 6px rgba(143, 91, 78, 0.2);
 }
 
 
